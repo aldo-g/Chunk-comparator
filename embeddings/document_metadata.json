@@ -1,0 +1,191 @@
+{
+  "total_documents": 30,
+  "documents": {
+    "01_remote_work_policy_v10.md": {
+      "sentence_count": 8,
+      "processed_sentences": 8,
+      "file_size": 931,
+      "processing_time": "2025-06-26 13:30:49"
+    },
+    "02_remote_work_policy_v20.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1080,
+      "processing_time": "2025-06-26 13:30:55"
+    },
+    "03_work_from_home_guidelines.md": {
+      "sentence_count": 8,
+      "processed_sentences": 8,
+      "file_size": 941,
+      "processing_time": "2025-06-26 13:30:57"
+    },
+    "04_expense_reimbursement_policy_v10.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 972,
+      "processing_time": "2025-06-26 13:31:00"
+    },
+    "05_expense_reimbursement_policy_v20.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1180,
+      "processing_time": "2025-06-26 13:31:02"
+    },
+    "06_engineering_team_remote_work_guidelines.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1081,
+      "processing_time": "2025-06-26 13:31:04"
+    },
+    "07_security_policy_for_remote_workers.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1007,
+      "processing_time": "2025-06-26 13:31:07"
+    },
+    "08_updated_remote_work_policy_v30.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1027,
+      "processing_time": "2025-06-26 13:31:09"
+    },
+    "09_travel_and_expense_guidelines_sales_team.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1072,
+      "processing_time": "2025-06-26 13:31:13"
+    },
+    "10_covid_19_workplace_safety_protocol.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 906,
+      "processing_time": "2025-06-26 13:31:16"
+    },
+    "11_employee_benefits_overview_2023.md": {
+      "sentence_count": 11,
+      "processed_sentences": 11,
+      "file_size": 1073,
+      "processing_time": "2025-06-26 13:31:19"
+    },
+    "12_updated_benefits_package_2024.md": {
+      "sentence_count": 11,
+      "processed_sentences": 11,
+      "file_size": 1225,
+      "processing_time": "2025-06-26 13:31:23"
+    },
+    "13_it_security_training_module.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1079,
+      "processing_time": "2025-06-26 13:31:26"
+    },
+    "14_cybersecurity_best_practices.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1097,
+      "processing_time": "2025-06-26 13:31:29"
+    },
+    "15_new_employee_onboarding_checklist.md": {
+      "sentence_count": 8,
+      "processed_sentences": 8,
+      "file_size": 970,
+      "processing_time": "2025-06-26 13:31:31"
+    },
+    "16_employee_orientation_program.md": {
+      "sentence_count": 8,
+      "processed_sentences": 8,
+      "file_size": 1160,
+      "processing_time": "2025-06-26 13:31:34"
+    },
+    "17_code_review_guidelines.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 980,
+      "processing_time": "2025-06-26 13:31:37"
+    },
+    "18_software_development_standards.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1170,
+      "processing_time": "2025-06-26 13:31:40"
+    },
+    "19_client_data_privacy_policy.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1025,
+      "processing_time": "2025-06-26 13:31:42"
+    },
+    "20_customer_information_protection_guidelines.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1147,
+      "processing_time": "2025-06-26 13:31:48"
+    },
+    "21_performance_review_process_2023.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1038,
+      "processing_time": "2025-06-26 13:31:50"
+    },
+    "22_annual_review_framework_2024.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1159,
+      "processing_time": "2025-06-26 13:31:52"
+    },
+    "23_workplace_safety_manual.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1006,
+      "processing_time": "2025-06-26 13:31:55"
+    },
+    "24_office_safety_protocols.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1139,
+      "processing_time": "2025-06-26 13:31:58"
+    },
+    "25_vendor_management_policy.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1053,
+      "processing_time": "2025-06-26 13:32:00"
+    },
+    "26_supplier_relationship_guidelines.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1277,
+      "processing_time": "2025-06-26 13:32:03"
+    },
+    "27_marketing_campaign_guidelines.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1119,
+      "processing_time": "2025-06-26 13:32:06"
+    },
+    "28_digital_marketing_standards.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1298,
+      "processing_time": "2025-06-26 13:32:09"
+    },
+    "29_customer_support_procedures.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1120,
+      "processing_time": "2025-06-26 13:32:11"
+    },
+    "30_client_service_standards.md": {
+      "sentence_count": 9,
+      "processed_sentences": 9,
+      "file_size": 1322,
+      "processing_time": "2025-06-26 13:32:14"
+    }
+  },
+  "processing_stats": {
+    "start_time": "2025-06-26 13:30:46",
+    "total_sentences": 270,
+    "total_documents_processed": 30,
+    "end_time": "2025-06-26 13:32:14"
+  }
+}

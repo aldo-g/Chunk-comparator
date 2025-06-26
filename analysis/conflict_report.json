@@ -1,0 +1,112 @@
+{
+  "summary": {
+    "total_matches": 550,
+    "exact_duplicates": 2,
+    "high_similarity": 41,
+    "potential_conflicts": 507,
+    "document_pairs_with_matches": 123,
+    "potential_policy_conflicts": 0
+  },
+  "top_conflicts": [
+    {
+      "sentence1_id": "01_remote_work_policy_v10_sent002",
+      "sentence2_id": "02_remote_work_policy_v20_sent002",
+      "document1": "01_remote_work_policy_v10.md",
+      "document2": "02_remote_work_policy_v20.md",
+      "similarity_score": 1.0,
+      "match_type": "exact_duplicate",
+      "sentence1_text": "Employees must submit a formal request to their direct manager and receive written approval before beginning any remote work schedule.",
+      "sentence2_text": "Employees must submit a formal request to their direct manager and receive written approval before beginning any remote work schedule."
+    },
+    {
+      "sentence1_id": "04_expense_reimbursement_policy_v10_sent005",
+      "sentence2_id": "05_expense_reimbursement_policy_v20_sent005",
+      "document1": "04_expense_reimbursement_policy_v10.md",
+      "document2": "05_expense_reimbursement_policy_v20.md",
+      "similarity_score": 1.0,
+      "match_type": "exact_duplicate",
+      "sentence1_text": "This includes software subscriptions, hardware upgrades, and professional development tools.",
+      "sentence2_text": "This includes software subscriptions, hardware upgrades, and professional development tools."
+    },
+    {
+      "sentence1_id": "04_expense_reimbursement_policy_v10_sent002",
+      "sentence2_id": "05_expense_reimbursement_policy_v20_sent002",
+      "document1": "04_expense_reimbursement_policy_v10.md",
+      "document2": "05_expense_reimbursement_policy_v20.md",
+      "similarity_score": 1.0,
+      "match_type": "high_similarity",
+      "sentence1_text": "Employees can be reimbursed for reasonable travel expenses including airfare, hotel accommodations, and ground transportation.",
+      "sentence2_text": "Employees can be reimbursed for reasonable travel expenses including airfare, hotel accommodations, and ground transportation."
+    },
+    {
+      "sentence1_id": "01_remote_work_policy_v10_sent001",
+      "sentence2_id": "02_remote_work_policy_v20_sent001",
+      "document1": "01_remote_work_policy_v10.md",
+      "document2": "02_remote_work_policy_v20.md",
+      "similarity_score": 0.9946,
+      "match_type": "high_similarity",
+      "sentence1_text": "Document 1: Remote Work Policy v1.0 Metadata: Policy-RW-001, HR Department, January 2020 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements.",
+      "sentence2_text": "Document 2: Remote Work Policy v2.0 Metadata: Policy-RW-002, HR Department, March 2021 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements."
+    },
+    {
+      "sentence1_id": "01_remote_work_policy_v10_sent006",
+      "sentence2_id": "02_remote_work_policy_v20_sent007",
+      "document1": "01_remote_work_policy_v10.md",
+      "document2": "02_remote_work_policy_v20.md",
+      "similarity_score": 0.9924,
+      "match_type": "high_similarity",
+      "sentence1_text": "Section C: Communication Requirements Remote employees must be available during core business hours from 9 AM to 3 PM EST.",
+      "sentence2_text": "Section C: Communication Requirements Remote employees must be available during core business hours from 10 AM to 2 PM EST."
+    },
+    {
+      "sentence1_id": "11_employee_benefits_overview_2023_sent004",
+      "sentence2_id": "12_updated_benefits_package_2024_sent004",
+      "document1": "11_employee_benefits_overview_2023.md",
+      "document2": "12_updated_benefits_package_2024.md",
+      "similarity_score": 0.9897,
+      "match_type": "high_similarity",
+      "sentence1_text": "Open enrollment occurs annually in November with coverage beginning January 1st.",
+      "sentence2_text": "Open enrollment occurs annually in November with coverage effective January 1st."
+    },
+    {
+      "sentence1_id": "04_expense_reimbursement_policy_v10_sent001",
+      "sentence2_id": "05_expense_reimbursement_policy_v20_sent001",
+      "document1": "04_expense_reimbursement_policy_v10.md",
+      "document2": "05_expense_reimbursement_policy_v20.md",
+      "similarity_score": 0.9869,
+      "match_type": "high_similarity",
+      "sentence1_text": "Document 4: Expense Reimbursement Policy v1.0 Metadata: Policy-EXP-001, Finance Department, January 2020 Travel Expenses Business travel must be pre-approved by direct supervisors.",
+      "sentence2_text": "Document 5: Expense Reimbursement Policy v2.0 Metadata: Policy-EXP-002, Finance Department, August 2021 Travel Expenses Business travel must be pre-approved by direct supervisors through the online travel booking system."
+    },
+    {
+      "sentence1_id": "04_expense_reimbursement_policy_v10_sent003",
+      "sentence2_id": "05_expense_reimbursement_policy_v20_sent003",
+      "document1": "04_expense_reimbursement_policy_v10.md",
+      "document2": "05_expense_reimbursement_policy_v20.md",
+      "similarity_score": 0.9819,
+      "match_type": "high_similarity",
+      "sentence1_text": "Meal reimbursements are limited to $50 per day for domestic travel and $75 per day for international travel.",
+      "sentence2_text": "Meal reimbursements are limited to $60 per day for domestic travel and $90 per day for international travel, with receipts required for expenses over $25."
+    },
+    {
+      "sentence1_id": "04_expense_reimbursement_policy_v10_sent004",
+      "sentence2_id": "05_expense_reimbursement_policy_v20_sent004",
+      "document1": "04_expense_reimbursement_policy_v10.md",
+      "document2": "05_expense_reimbursement_policy_v20.md",
+      "similarity_score": 0.9808,
+      "match_type": "high_similarity",
+      "sentence1_text": "Technology Expenses The company will reimburse employees for necessary technology purchases with proper approval.",
+      "sentence2_text": "Technology Expenses The company will reimburse employees for necessary technology purchases with proper approval through the procurement portal."
+    },
+    {
+      "sentence1_id": "23_workplace_safety_manual_sent009",
+      "sentence2_id": "24_office_safety_protocols_sent009",
+      "document1": "23_workplace_safety_manual.md",
+      "document2": "24_office_safety_protocols.md",
+      "similarity_score": 0.9792,
+      "match_type": "high_similarity",
+      "sentence1_text": "Proper training on PPE usage is provided for all affected employees.",
+      "sentence2_text": "Comprehensive training on proper PPE use is provided to all relevant employees."
+    }
+  ]
+}

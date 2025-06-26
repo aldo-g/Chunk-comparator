@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document Conflict Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .header {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .header h1 {
+            font-size: 2.5em;
+            margin-bottom: 10px;
+            font-weight: 300;
+        }
+        
+        .header p {
+            font-size: 1.1em;
+            opacity: 0.9;
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 30px;
+            background: #f8f9ff;
+        }
+        
+        .stat-card {
+            background: white;
+            padding: 25px;
+            border-radius: 15px;
+            text-align: center;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            border-left: 4px solid #667eea;
+        }
+        
+        .stat-number {
+            font-size: 2.5em;
+            font-weight: bold;
+            color: #667eea;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            color: #666;
+            font-size: 0.9em;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .main-content {
+            padding: 30px;
+        }
+        
+        .section {
+            margin-bottom: 40px;
+        }
+        
+        .section h2 {
+            color: #333;
+            margin-bottom: 20px;
+            font-size: 1.8em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .section-icon {
+            font-size: 1.2em;
+        }
+        
+        .recommendations-grid {
+            display: grid;
+            gap: 20px;
+        }
+        
+        .recommendation-card {
+            background: white;
+            border: 2px solid #e1e5e9;
+            border-radius: 15px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .recommendation-card.selected {
+            border-color: #667eea;
+            background: #f8f9ff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
+        }
+        
+        .recommendation-card:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        }
+        
+        .recommendation-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .recommendation-type {
+            background: #ff6b6b;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.8em;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        
+        .recommendation-type.remove_outdated {
+            background: #ff6b6b;
+        }
+        
+        .recommendation-type.consolidate {
+            background: #feca57;
+        }
+        
+        .confidence-score {
+            background: #48dbfb;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9em;
+            font-weight: bold;
+        }
+        
+        .document-name {
+            font-size: 1.2em;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 10px;
+            word-break: break-word;
+        }
+        
+        .recommendation-reason {
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+        }
+        
+        .evidence-list {
+            background: #f8f9fa;
+            border-radius: 10px;
+            padding: 15px;
+            margin-bottom: 15px;
+        }
+        
+        .evidence-list h4 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 0.9em;
+        }
+        
+        .evidence-list ul {
+            list-style: none;
+            padding-left: 0;
+        }
+        
+        .evidence-list li {
+            padding: 5px 0;
+            color: #666;
+            font-size: 0.9em;
+        }
+        
+        .evidence-list li:before {
+            content: "•";
+            color: #667eea;
+            font-weight: bold;
+            margin-right: 8px;
+        }
+        
+        .conflicts-grid {
+            display: grid;
+            gap: 15px;
+        }
+        
+        .conflict-card {
+            background: #fff;
+            border: 1px solid #e1e5e9;
+            border-radius: 10px;
+            padding: 20px;
+            transition: all 0.3s ease;
+        }
+        
+        .conflict-card:hover {
+            border-color: #667eea;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .conflict-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .document-pair {
+            font-weight: bold;
+            color: #333;
+            font-size: 1.1em;
+        }
+        
+        .conflict-stats {
+            display: flex;
+            gap: 15px;
+            font-size: 0.9em;
+        }
+        
+        .conflict-count {
+            background: #ff6b6b;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+        
+        .similarity-score {
+            background: #48dbfb;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+        }
+        
+        .relationship-type {
+            background: #26de81;
+            color: white;
+            padding: 4px 12px;
+            border-radius: 15px;
+            text-transform: capitalize;
+        }
+        
+        .action-buttons {
+            position: sticky;
+            bottom: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 15px;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+            display: flex;
+            gap: 15px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 15px 30px;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            font-size: 1em;
+            font-weight: bold;
+            transition: all 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .btn-primary {
+            background: #667eea;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background: #5a67d8;
+            transform: translateY(-2px);
+        }
+        
+        .btn-secondary {
+            background: #e1e5e9;
+            color: #333;
+        }
+        
+        .btn-secondary:hover {
+            background: #d1d5d9;
+            transform: translateY(-2px);
+        }
+        
+        .btn-danger {
+            background: #ff6b6b;
+            color: white;
+        }
+        
+        .btn-danger:hover {
+            background: #ff5252;
+            transform: translateY(-2px);
+        }
+        
+        .selection-counter {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #667eea;
+            color: white;
+            padding: 15px 20px;
+            border-radius: 25px;
+            font-weight: bold;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+        
+        .checkbox-container {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+        }
+        
+        .checkbox-container input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: #667eea;
+        }
+        
+        .loading {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+        
+        .empty-state {
+            text-align: center;
+            padding: 50px;
+            color: #666;
+        }
+        
+        .empty-state h3 {
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                margin: 10px;
+                border-radius: 15px;
+            }
+            
+            .header {
+                padding: 20px;
+            }
+            
+            .header h1 {
+                font-size: 2em;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                padding: 20px;
+                gap: 15px;
+            }
+            
+            .main-content {
+                padding: 20px;
+            }
+            
+            .conflict-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .selection-counter {
+                position: static;
+                margin-bottom: 20px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="selectionCounter" class="selection-counter" style="display: none;">
+        Selected: <span id="selectionCount">0</span> documents
+    </div>
+
+    <div class="container">
+        <div class="header">
+            <h1>📊 Document Conflict Dashboard</h1>
+            <p>Analyze conflicts and manage document duplicates in your repository</p>
+        </div>
+
+        <div id="loadingState" class="loading">
+            <h3>🔄 Loading conflict analysis...</h3>
+            <p>Please wait while we process your document conflicts.</p>
+        </div>
+
+        <div id="dashboardContent" style="display: none;">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number" id="totalConflicts">0</div>
+                    <div class="stat-label">Document Pairs</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="totalRecommendations">0</div>
+                    <div class="stat-label">Recommendations</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="highConfidence">0</div>
+                    <div class="stat-label">High Confidence</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" id="potentialSavings">0</div>
+                    <div class="stat-label">Files to Remove</div>
+                </div>
+            </div>
+
+            <div class="main-content">
+                <div class="section">
+                    <h2><span class="section-icon">🗑️</span> Removal Recommendations</h2>
+                    <div id="recommendationsContainer" class="recommendations-grid">
+                        <!-- Recommendations will be populated here -->
+                    </div>
+                </div>
+
+                <div class="section">
+                    <h2><span class="section-icon">⚠️</span> Document Conflicts</h2>
+                    <div id="conflictsContainer" class="conflicts-grid">
+                        <!-- Conflicts will be populated here -->
+                    </div>
+                </div>
+            </div>
+
+            <div class="action-buttons">
+                <button class="btn btn-secondary" onclick="selectAll()">Select All</button>
+                <button class="btn btn-secondary" onclick="clearSelection()">Clear Selection</button>
+                <button class="btn btn-primary" onclick="exportSelection()">Export Selection</button>
+                <button class="btn btn-danger" onclick="confirmDeletion()">Delete Selected</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        let conflictData = null;
+        let selectedDocuments = new Set();
+
+        // Load conflict data
+        async function loadConflictData() {
+            try {
+                const response = await fetch('analysis/document_conflicts.json');
+                if (!response.ok) throw new Error('Failed to load conflict data');
+                
+                conflictData = await response.json();
+                renderDashboard();
+            } catch (error) {
+                console.error('Error loading conflict data:', error);
+                document.getElementById('loadingState').innerHTML = `
+                    <h3>❌ Error loading data</h3>
+                    <p>Please ensure the conflict analysis has been run and the file exists at: analysis/document_conflicts.json</p>
+                    <button class="btn btn-primary" onclick="location.reload()">Retry</button>
+                `;
+            }
+        }
+
+        function renderDashboard() {
+            if (!conflictData) return;
+
+            // Update statistics
+            document.getElementById('totalConflicts').textContent = conflictData.summary.total_document_pairs_with_conflicts;
+            document.getElementById('totalRecommendations').textContent = conflictData.summary.total_removal_recommendations;
+            document.getElementById('highConfidence').textContent = conflictData.summary.high_confidence_recommendations;
+            
+            // Calculate potential file savings
+            const uniqueFiles = new Set();
+            conflictData.removal_recommendations.forEach(rec => {
+                rec.document.split(', ').forEach(doc => uniqueFiles.add(doc.trim()));
+            });
+            document.getElementById('potentialSavings').textContent = uniqueFiles.size;
+
+            // Render recommendations
+            renderRecommendations();
+
+            // Render conflicts
+            renderConflicts();
+
+            // Show dashboard
+            document.getElementById('loadingState').style.display = 'none';
+            document.getElementById('dashboardContent').style.display = 'block';
+        }
+
+        function renderRecommendations() {
+            const container = document.getElementById('recommendationsContainer');
+            
+            if (!conflictData.removal_recommendations.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>✅ No removal recommendations</h3>
+                        <p>Great! No documents need to be removed.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = conflictData.removal_recommendations.map((rec, index) => `
+                <div class="recommendation-card" data-doc="${rec.document}" onclick="toggleRecommendation('${rec.document}')">
+                    <div class="checkbox-container">
+                        <input type="checkbox" id="rec_${index}" onchange="toggleRecommendation('${rec.document}', this.checked)">
+                    </div>
+                    <div class="recommendation-header">
+                        <div class="recommendation-type ${rec.recommendation_type}">${rec.recommendation_type.replace('_', ' ')}</div>
+                        <div class="confidence-score">${Math.round(rec.confidence_score * 100)}%</div>
+                    </div>
+                    <div class="document-name">${rec.document}</div>
+                    <div class="recommendation-reason">${rec.reason}</div>
+                    <div class="evidence-list">
+                        <h4>Evidence:</h4>
+                        <ul>
+                            ${rec.evidence.map(evidence => `<li>${evidence}</li>`).join('')}
+                        </ul>
+                    </div>
+                    ${rec.conflicting_documents.length ? `
+                        <div style="margin-top: 10px; font-size: 0.9em; color: #666;">
+                            <strong>Conflicts with:</strong> ${rec.conflicting_documents.join(', ')}
+                        </div>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        function renderConflicts() {
+            const container = document.getElementById('conflictsContainer');
+            
+            if (!conflictData.document_conflicts.length) {
+                container.innerHTML = `
+                    <div class="empty-state">
+                        <h3>✅ No document conflicts found</h3>
+                        <p>All documents are unique with no significant overlaps.</p>
+                    </div>
+                `;
+                return;
+            }
+
+            container.innerHTML = conflictData.document_conflicts.map(conflict => `
+                <div class="conflict-card">
+                    <div class="conflict-header">
+                        <div class="document-pair">${conflict.doc1} ↔ ${conflict.doc2}</div>
+                        <div class="conflict-stats">
+                            <span class="conflict-count">${conflict.conflict_count} conflicts</span>
+                            <span class="similarity-score">${Math.round(conflict.avg_similarity * 100)}% similar</span>
+                            <span class="relationship-type">${conflict.relationship_type.replace('_', ' ')}</span>
+                        </div>
+                    </div>
+                    ${conflict.top_conflicts && conflict.top_conflicts.length ? `
+                        <details style="margin-top: 15px;">
+                            <summary style="cursor: pointer; font-weight: bold; color: #667eea;">View Sample Conflicts</summary>
+                            <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 5px;">
+                                ${conflict.top_conflicts.map(sample => `
+                                    <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #e1e5e9;">
+                                        <div style="font-size: 0.8em; color: #666; margin-bottom: 5px;">
+                                            Similarity: ${Math.round(sample.similarity_score * 100)}%
+                                        </div>
+                                        <div style="margin-bottom: 5px;">
+                                            <strong>1:</strong> "${sample.sentence1_text.substring(0, 100)}..."
+                                        </div>
+                                        <div>
+                                            <strong>2:</strong> "${sample.sentence2_text.substring(0, 100)}..."
+                                        </div>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </details>
+                    ` : ''}
+                </div>
+            `).join('');
+        }
+
+        function toggleRecommendation(document, forceValue = null) {
+            const isSelected = forceValue !== null ? forceValue : selectedDocuments.has(document);
+            
+            if (isSelected && !selectedDocuments.has(document)) {
+                selectedDocuments.add(document);
+            } else if (!isSelected && selectedDocuments.has(document)) {
+                selectedDocuments.delete(document);
+            } else if (forceValue === null) {
+                // Toggle
+                if (selectedDocuments.has(document)) {
+                    selectedDocuments.delete(document);
+                } else {
+                    selectedDocuments.add(document);
+                }
+            }
+
+            updateUI();
+        }
+
+        function updateUI() {
+            // Update selection counter
+            const counter = document.getElementById('selectionCounter');
+            const count = document.getElementById('selectionCount');
+            
+            if (selectedDocuments.size > 0) {
+                counter.style.display = 'block';
+                count.textContent = selectedDocuments.size;
+            } else {
+                counter.style.display = 'none';
+            }
+
+            // Update card appearances
+            document.querySelectorAll('.recommendation-card').forEach(card => {
+                const doc = card.getAttribute('data-doc');
+                const checkbox = card.querySelector('input[type="checkbox"]');
+                
+                if (selectedDocuments.has(doc)) {
+                    card.classList.add('selected');
+                    if (checkbox) checkbox.checked = true;
+                } else {
+                    card.classList.remove('selected');
+                    if (checkbox) checkbox.checked = false;
+                }
+            });
+        }
+
+        function selectAll() {
+            if (!conflictData) return;
+            
+            conflictData.removal_recommendations.forEach(rec => {
+                selectedDocuments.add(rec.document);
+            });
+            
+            updateUI();
+        }
+
+        function clearSelection() {
+            selectedDocuments.clear();
+            updateUI();
+        }
+
+        function exportSelection() {
+            if (selectedDocuments.size === 0) {
+                alert('Please select at least one document to export.');
+                return;
+            }
+
+            const exportData = {
+                export_date: new Date().toISOString(),
+                selected_documents: Array.from(selectedDocuments),
+                total_selected: selectedDocuments.size,
+                recommendations: conflictData.removal_recommendations.filter(rec => 
+                    selectedDocuments.has(rec.document)
+                )
+            };
+
+            const blob = new Blob([JSON.stringify(exportData, null, 2)], {
+                type: 'application/json'
+            });
+            
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `document_removal_selection_${new Date().toISOString().split('T')[0]}.json`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+        }
+
+        function confirmDeletion() {
+            if (selectedDocuments.size === 0) {
+                alert('Please select at least one document to delete.');
+                return;
+            }
+
+            const documentList = Array.from(selectedDocuments).join('\n• ');
+            const confirmed = confirm(`Are you sure you want to delete the following ${selectedDocuments.size} document(s)?\n\n• ${documentList}\n\nThis action cannot be undone.`);
+
+            if (confirmed) {
+                // In a real implementation, this would call an API
+                alert(`Selected ${selectedDocuments.size} documents for deletion. In a real implementation, this would remove the files from your storage account.`);
+                
+                // For demo purposes, clear the selection
+                clearSelection();
+            }
+        }
+
+        // Initialize dashboard
+        window.addEventListener('load', loadConflictData);
+    </script>
+</body>
+</html>

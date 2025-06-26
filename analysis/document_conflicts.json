@@ -1,0 +1,1955 @@
+{
+  "analysis_date": "2025-06-26 15:46:40",
+  "filtering_criteria": {
+    "minimum_conflicts_per_pair": 3,
+    "excludes_same_document_matches": true,
+    "note": "Only shows conflicts between different documents with at least 3 conflicting sentences"
+  },
+  "summary": {
+    "total_document_pairs_with_conflicts": 37,
+    "total_removal_recommendations": 11,
+    "high_confidence_recommendations": 11
+  },
+  "document_conflicts": [
+    {
+      "doc1": "04_expense_reimbursement_policy_v10.md",
+      "doc2": "05_expense_reimbursement_policy_v20.md",
+      "conflict_count": 24,
+      "avg_similarity": 0.9039,
+      "max_similarity": 1.0,
+      "relationship_type": "version_conflict",
+      "top_conflicts": [
+        {
+          "sentence1_id": "04_expense_reimbursement_policy_v10_sent005",
+          "sentence2_id": "05_expense_reimbursement_policy_v20_sent005",
+          "sentence1_text": "This includes software subscriptions, hardware upgrades, and professional development tools.",
+          "sentence2_text": "This includes software subscriptions, hardware upgrades, and professional development tools.",
+          "document1": "04_expense_reimbursement_policy_v10.md",
+          "document2": "05_expense_reimbursement_policy_v20.md",
+          "similarity_score": 1.0,
+          "match_type": "exact_duplicate"
+        },
+        {
+          "sentence1_id": "04_expense_reimbursement_policy_v10_sent002",
+          "sentence2_id": "05_expense_reimbursement_policy_v20_sent002",
+          "sentence1_text": "Employees can be reimbursed for reasonable travel expenses including airfare, hotel accommodations, and ground transportation.",
+          "sentence2_text": "Employees can be reimbursed for reasonable travel expenses including airfare, hotel accommodations, and ground transportation.",
+          "document1": "04_expense_reimbursement_policy_v10.md",
+          "document2": "05_expense_reimbursement_policy_v20.md",
+          "similarity_score": 1.0,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "04_expense_reimbursement_policy_v10_sent001",
+          "sentence2_id": "05_expense_reimbursement_policy_v20_sent001",
+          "sentence1_text": "Document 4: Expense Reimbursement Policy v1.0 Metadata: Policy-EXP-001, Finance Department, January 2020 Travel Expenses Business travel must be pre-approved by direct supervisors.",
+          "sentence2_text": "Document 5: Expense Reimbursement Policy v2.0 Metadata: Policy-EXP-002, Finance Department, August 2021 Travel Expenses Business travel must be pre-approved by direct supervisors through the online travel booking system.",
+          "document1": "04_expense_reimbursement_policy_v10.md",
+          "document2": "05_expense_reimbursement_policy_v20.md",
+          "similarity_score": 0.9869,
+          "match_type": "high_similarity"
+        }
+      ]
+    },
+    {
+      "doc1": "23_workplace_safety_manual.md",
+      "doc2": "24_office_safety_protocols.md",
+      "conflict_count": 20,
+      "avg_similarity": 0.9089,
+      "max_similarity": 0.9792,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "23_workplace_safety_manual_sent009",
+          "sentence2_id": "24_office_safety_protocols_sent009",
+          "sentence1_text": "Proper training on PPE usage is provided for all affected employees.",
+          "sentence2_text": "Comprehensive training on proper PPE use is provided to all relevant employees.",
+          "document1": "23_workplace_safety_manual.md",
+          "document2": "24_office_safety_protocols.md",
+          "similarity_score": 0.9792,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "23_workplace_safety_manual_sent005",
+          "sentence2_id": "24_office_safety_protocols_sent005",
+          "sentence1_text": "All incidents require completion of safety report forms within 24 hours.",
+          "sentence2_text": "Incident documentation must be completed within 24 hours using standardized safety reporting forms.",
+          "document1": "23_workplace_safety_manual.md",
+          "document2": "24_office_safety_protocols.md",
+          "similarity_score": 0.966,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "23_workplace_safety_manual_sent002",
+          "sentence2_id": "24_office_safety_protocols_sent002",
+          "sentence1_text": "Fire drills are conducted quarterly to ensure proper response procedures.",
+          "sentence2_text": "Emergency drills occur on a quarterly basis to practice proper response protocols.",
+          "document1": "23_workplace_safety_manual.md",
+          "document2": "24_office_safety_protocols.md",
+          "similarity_score": 0.9644,
+          "match_type": "high_similarity"
+        }
+      ]
+    },
+    {
+      "doc1": "02_remote_work_policy_v20.md",
+      "doc2": "08_updated_remote_work_policy_v30.md",
+      "conflict_count": 19,
+      "avg_similarity": 0.8947,
+      "max_similarity": 0.955,
+      "relationship_type": "version_conflict",
+      "top_conflicts": [
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent001",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent001",
+          "sentence1_text": "Document 2: Remote Work Policy v2.0 Metadata: Policy-RW-002, HR Department, March 2021 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements.",
+          "sentence2_text": "Document 8: Updated Remote Work Policy v3.0 Metadata: Policy-RW-003, HR Department, January 2024 Eligibility Requirements All employees are eligible for remote work arrangements regardless of tenure, subject to role requirements and manager approval.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.955,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent006",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent006",
+          "sentence1_text": "The company will reimburse up to $75 monthly for internet expenses with proper documentation.",
+          "sentence2_text": "Internet expense reimbursement is available up to $100 monthly with documentation.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.949,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent005",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent005",
+          "sentence1_text": "Employees working remotely more than 3 days per week are eligible for a $500 annual home office stipend.",
+          "sentence2_text": "Employees working remotely full-time receive a $800 annual home office allowance.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.947,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "13_it_security_training_module.md",
+      "doc2": "14_cybersecurity_best_practices.md",
+      "conflict_count": 18,
+      "avg_similarity": 0.8853,
+      "max_similarity": 0.9505,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "13_it_security_training_module_sent009",
+          "sentence2_id": "14_cybersecurity_best_practices_sent008",
+          "sentence1_text": "All data transmissions must use encrypted channels and approved company systems.",
+          "sentence2_text": "Confidential information transmission must occur through encrypted, company-approved channels only.",
+          "document1": "13_it_security_training_module.md",
+          "document2": "14_cybersecurity_best_practices.md",
+          "similarity_score": 0.9505,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "13_it_security_training_module_sent004",
+          "sentence2_id": "14_cybersecurity_best_practices_sent004",
+          "sentence1_text": "Phishing Awareness Employees should be vigilant about suspicious emails requesting personal information or urgent action.",
+          "sentence2_text": "Email Security Protocols Employees must exercise caution when handling email communications, particularly those requesting sensitive information or immediate action.",
+          "document1": "13_it_security_training_module.md",
+          "document2": "14_cybersecurity_best_practices.md",
+          "similarity_score": 0.9321,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "13_it_security_training_module_sent007",
+          "sentence2_id": "14_cybersecurity_best_practices_sent007",
+          "sentence1_text": "Data Handling Confidential company data must be classified and handled according to our data classification policy.",
+          "sentence2_text": "Information Protection Company data must be classified according to sensitivity levels and handled with appropriate security measures.",
+          "document1": "13_it_security_training_module.md",
+          "document2": "14_cybersecurity_best_practices.md",
+          "similarity_score": 0.9275,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "27_marketing_campaign_guidelines.md",
+      "doc2": "28_digital_marketing_standards.md",
+      "conflict_count": 16,
+      "avg_similarity": 0.9077,
+      "max_similarity": 0.9593,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "27_marketing_campaign_guidelines_sent005",
+          "sentence2_id": "28_digital_marketing_standards_sent005",
+          "sentence1_text": "Social media content must be scheduled through approved platforms with proper oversight.",
+          "sentence2_text": "Social media publishing must utilize approved management platforms with appropriate content oversight procedures.",
+          "document1": "27_marketing_campaign_guidelines.md",
+          "document2": "28_digital_marketing_standards.md",
+          "similarity_score": 0.9593,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "27_marketing_campaign_guidelines_sent002",
+          "sentence2_id": "28_digital_marketing_standards_sent002",
+          "sentence1_text": "Marketing content should maintain consistent voice and messaging across all channels and campaigns.",
+          "sentence2_text": "Content messaging should maintain unified voice and brand positioning across digital channels and promotional campaigns.",
+          "document1": "27_marketing_campaign_guidelines.md",
+          "document2": "28_digital_marketing_standards.md",
+          "similarity_score": 0.9578,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "27_marketing_campaign_guidelines_sent006",
+          "sentence2_id": "28_digital_marketing_standards_sent006",
+          "sentence1_text": "Campaign budgets over $10,000 require additional approval from the marketing director.",
+          "sentence2_text": "Campaign expenditures exceeding $10,000 require additional authorization from marketing leadership.",
+          "document1": "27_marketing_campaign_guidelines.md",
+          "document2": "28_digital_marketing_standards.md",
+          "similarity_score": 0.9529,
+          "match_type": "high_similarity"
+        }
+      ]
+    },
+    {
+      "doc1": "17_code_review_guidelines.md",
+      "doc2": "18_software_development_standards.md",
+      "conflict_count": 16,
+      "avg_similarity": 0.9052,
+      "max_similarity": 0.9616,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "17_code_review_guidelines_sent002",
+          "sentence2_id": "18_software_development_standards_sent002",
+          "sentence1_text": "Reviewers should examine code for functionality, security vulnerabilities, and adherence to coding standards.",
+          "sentence2_text": "Code reviewers must assess functionality, security compliance, and conformance to established coding conventions.",
+          "document1": "17_code_review_guidelines.md",
+          "document2": "18_software_development_standards.md",
+          "similarity_score": 0.9616,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "17_code_review_guidelines_sent008",
+          "sentence2_id": "18_software_development_standards_sent008",
+          "sentence1_text": "Reviewers should explain reasoning behind suggestions and provide examples when helpful.",
+          "sentence2_text": "Reviewers should provide clear explanations for suggested changes and include relevant examples.",
+          "document1": "17_code_review_guidelines.md",
+          "document2": "18_software_development_standards.md",
+          "similarity_score": 0.9553,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "17_code_review_guidelines_sent004",
+          "sentence2_id": "18_software_development_standards_sent004",
+          "sentence1_text": "Quality Standards Code submissions should include appropriate unit tests with minimum 80% coverage.",
+          "sentence2_text": "Testing and Documentation Software contributions must include comprehensive unit testing achieving a minimum of 80% code coverage.",
+          "document1": "17_code_review_guidelines.md",
+          "document2": "18_software_development_standards.md",
+          "similarity_score": 0.9386,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "01_remote_work_policy_v10.md",
+      "doc2": "02_remote_work_policy_v20.md",
+      "conflict_count": 15,
+      "avg_similarity": 0.9029,
+      "max_similarity": 1.0,
+      "relationship_type": "version_conflict",
+      "top_conflicts": [
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent002",
+          "sentence2_id": "02_remote_work_policy_v20_sent002",
+          "sentence1_text": "Employees must submit a formal request to their direct manager and receive written approval before beginning any remote work schedule.",
+          "sentence2_text": "Employees must submit a formal request to their direct manager and receive written approval before beginning any remote work schedule.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "02_remote_work_policy_v20.md",
+          "similarity_score": 1.0,
+          "match_type": "exact_duplicate"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent001",
+          "sentence2_id": "02_remote_work_policy_v20_sent001",
+          "sentence1_text": "Document 1: Remote Work Policy v1.0 Metadata: Policy-RW-001, HR Department, January 2020 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements.",
+          "sentence2_text": "Document 2: Remote Work Policy v2.0 Metadata: Policy-RW-002, HR Department, March 2021 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "02_remote_work_policy_v20.md",
+          "similarity_score": 0.9946,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent006",
+          "sentence2_id": "02_remote_work_policy_v20_sent007",
+          "sentence1_text": "Section C: Communication Requirements Remote employees must be available during core business hours from 9 AM to 3 PM EST.",
+          "sentence2_text": "Section C: Communication Requirements Remote employees must be available during core business hours from 10 AM to 2 PM EST.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "02_remote_work_policy_v20.md",
+          "similarity_score": 0.9924,
+          "match_type": "high_similarity"
+        }
+      ]
+    },
+    {
+      "doc1": "25_vendor_management_policy.md",
+      "doc2": "26_supplier_relationship_guidelines.md",
+      "conflict_count": 14,
+      "avg_similarity": 0.9035,
+      "max_similarity": 0.9688,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "25_vendor_management_policy_sent009",
+          "sentence2_id": "26_supplier_relationship_guidelines_sent009",
+          "sentence1_text": "Payment terms are standardized at Net-30 unless special arrangements are pre-approved.",
+          "sentence2_text": "Standard payment terms follow Net-30 protocols unless alternative arrangements receive prior approval.",
+          "document1": "25_vendor_management_policy.md",
+          "document2": "26_supplier_relationship_guidelines.md",
+          "similarity_score": 0.9688,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "25_vendor_management_policy_sent008",
+          "sentence2_id": "26_supplier_relationship_guidelines_sent008",
+          "sentence1_text": "Contract renewals require performance review and market analysis to ensure competitive pricing.",
+          "sentence2_text": "Contract renewal processes include performance evaluation and competitive market analysis to maintain favorable terms.",
+          "document1": "25_vendor_management_policy.md",
+          "document2": "26_supplier_relationship_guidelines.md",
+          "similarity_score": 0.9602,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "25_vendor_management_policy_sent003",
+          "sentence2_id": "26_supplier_relationship_guidelines_sent003",
+          "sentence1_text": "Contracts require legal review and executive approval for agreements over $25,000.",
+          "sentence2_text": "Agreements exceeding $25,000 require legal department review and senior management authorization.",
+          "document1": "25_vendor_management_policy.md",
+          "document2": "26_supplier_relationship_guidelines.md",
+          "similarity_score": 0.9427,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "29_customer_support_procedures.md",
+      "doc2": "30_client_service_standards.md",
+      "conflict_count": 14,
+      "avg_similarity": 0.9014,
+      "max_similarity": 0.9506,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "29_customer_support_procedures_sent006",
+          "sentence2_id": "30_client_service_standards_sent006",
+          "sentence1_text": "Escalation procedures include detailed documentation of previous troubleshooting steps.",
+          "sentence2_text": "Escalation documentation should include comprehensive records of troubleshooting activities performed.",
+          "document1": "29_customer_support_procedures.md",
+          "document2": "30_client_service_standards.md",
+          "similarity_score": 0.9506,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "29_customer_support_procedures_sent001",
+          "sentence2_id": "30_client_service_standards_sent001",
+          "sentence1_text": "Document 29: Customer Support Procedures Metadata: Procedures-SUPPORT-001, Customer Success Department, May 2023 Ticket Management All customer inquiries must be logged in the support ticket system within 30 minutes of receipt.",
+          "sentence2_text": "Document 30: Client Service Standards Metadata: Standards-SERVICE-001, Customer Success Department, September 2023 Issue Tracking and Response Customer service requests must be recorded in the support management system within 30 minutes of initial contact.",
+          "document1": "29_customer_support_procedures.md",
+          "document2": "30_client_service_standards.md",
+          "similarity_score": 0.9459,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "29_customer_support_procedures_sent004",
+          "sentence2_id": "30_client_service_standards_sent004",
+          "sentence1_text": "Escalation Process Complex technical issues should be escalated to senior support staff or engineering teams when resolution time exceeds SLA requirements.",
+          "sentence2_text": "Problem Resolution Escalation Technical challenges requiring specialized expertise should be transferred to senior support personnel or development teams when standard resolution timeframes are exceeded.",
+          "document1": "29_customer_support_procedures.md",
+          "document2": "30_client_service_standards.md",
+          "similarity_score": 0.9409,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "01_remote_work_policy_v10.md",
+      "doc2": "08_updated_remote_work_policy_v30.md",
+      "conflict_count": 14,
+      "avg_similarity": 0.8887,
+      "max_similarity": 0.9548,
+      "relationship_type": "version_conflict",
+      "top_conflicts": [
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent001",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent001",
+          "sentence1_text": "Document 1: Remote Work Policy v1.0 Metadata: Policy-RW-001, HR Department, January 2020 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements.",
+          "sentence2_text": "Document 8: Updated Remote Work Policy v3.0 Metadata: Policy-RW-003, HR Department, January 2024 Eligibility Requirements All employees are eligible for remote work arrangements regardless of tenure, subject to role requirements and manager approval.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.9548,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent006",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent007",
+          "sentence1_text": "Section C: Communication Requirements Remote employees must be available during core business hours from 9 AM to 3 PM EST.",
+          "sentence2_text": "Communication Standards Remote employees should maintain availability during team core hours, which vary by department.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.9342,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent002",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent002",
+          "sentence1_text": "Employees must submit a formal request to their direct manager and receive written approval before beginning any remote work schedule.",
+          "sentence2_text": "Employees must complete remote work training before beginning any remote schedule.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.9234,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "11_employee_benefits_overview_2023.md",
+      "doc2": "12_updated_benefits_package_2024.md",
+      "conflict_count": 13,
+      "avg_similarity": 0.9427,
+      "max_similarity": 0.9897,
+      "relationship_type": "duplicate_content",
+      "top_conflicts": [
+        {
+          "sentence1_id": "11_employee_benefits_overview_2023_sent004",
+          "sentence2_id": "12_updated_benefits_package_2024_sent004",
+          "sentence1_text": "Open enrollment occurs annually in November with coverage beginning January 1st.",
+          "sentence2_text": "Open enrollment occurs annually in November with coverage effective January 1st.",
+          "document1": "11_employee_benefits_overview_2023.md",
+          "document2": "12_updated_benefits_package_2024.md",
+          "similarity_score": 0.9897,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "11_employee_benefits_overview_2023_sent003",
+          "sentence2_id": "12_updated_benefits_package_2024_sent003",
+          "sentence1_text": "The company covers 80% of employee premiums and 60% of dependent premiums.",
+          "sentence2_text": "The company covers 85% of employee premiums and 70% of dependent premiums.",
+          "document1": "11_employee_benefits_overview_2023.md",
+          "document2": "12_updated_benefits_package_2024.md",
+          "similarity_score": 0.979,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "11_employee_benefits_overview_2023_sent005",
+          "sentence2_id": "12_updated_benefits_package_2024_sent005",
+          "sentence1_text": "Retirement Benefits The company offers a 401(k) retirement plan with immediate eligibility for all employees.",
+          "sentence2_text": "Retirement and Financial Planning The company offers a 401(k) retirement plan with immediate eligibility for all employees.",
+          "document1": "11_employee_benefits_overview_2023.md",
+          "document2": "12_updated_benefits_package_2024.md",
+          "similarity_score": 0.9724,
+          "match_type": "high_similarity"
+        }
+      ]
+    },
+    {
+      "doc1": "19_client_data_privacy_policy.md",
+      "doc2": "20_customer_information_protection_guidelines.md",
+      "conflict_count": 12,
+      "avg_similarity": 0.9205,
+      "max_similarity": 0.9716,
+      "relationship_type": "duplicate_content",
+      "top_conflicts": [
+        {
+          "sentence1_id": "19_client_data_privacy_policy_sent002",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent002",
+          "sentence1_text": "All data collection practices comply with GDPR, CCPA, and other applicable privacy regulations.",
+          "sentence2_text": "Data collection practices maintain full compliance with GDPR, CCPA, and relevant privacy legislation.",
+          "document1": "19_client_data_privacy_policy.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.9716,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "19_client_data_privacy_policy_sent009",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent009",
+          "sentence1_text": "Data deletion procedures include verification and certification of complete removal.",
+          "sentence2_text": "Deletion processes include thorough verification and formal certification of complete data removal.",
+          "document1": "19_client_data_privacy_policy.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.969,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "19_client_data_privacy_policy_sent005",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent005",
+          "sentence1_text": "All data transmissions use industry-standard encryption protocols.",
+          "sentence2_text": "All information transfers utilize industry-standard encryption technologies.",
+          "document1": "19_client_data_privacy_policy.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.9615,
+          "match_type": "high_similarity"
+        }
+      ]
+    },
+    {
+      "doc1": "21_performance_review_process_2023.md",
+      "doc2": "22_annual_review_framework_2024.md",
+      "conflict_count": 12,
+      "avg_similarity": 0.904,
+      "max_similarity": 0.9504,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "21_performance_review_process_2023_sent008",
+          "sentence2_id": "22_annual_review_framework_2024_sent008",
+          "sentence1_text": "Career advancement discussions identify skills needed for progression and available training resources.",
+          "sentence2_text": "Career progression conversations address skill requirements for advancement and identify relevant professional development opportunities.",
+          "document1": "21_performance_review_process_2023.md",
+          "document2": "22_annual_review_framework_2024.md",
+          "similarity_score": 0.9504,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "21_performance_review_process_2023_sent001",
+          "sentence2_id": "22_annual_review_framework_2024_sent001",
+          "sentence1_text": "Document 21: Performance Review Process 2023 Metadata: Process-PERF-001, HR Department, February 2023 Review Schedule Annual performance evaluations are conducted each March for all employees.",
+          "sentence2_text": "Document 22: Annual Review Framework 2024 Metadata: Framework-REVIEW-001, HR Department, January 2024 Assessment Timeline Comprehensive performance evaluations occur annually in March for all team members.",
+          "document1": "21_performance_review_process_2023.md",
+          "document2": "22_annual_review_framework_2024.md",
+          "similarity_score": 0.946,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "21_performance_review_process_2023_sent003",
+          "sentence2_id": "22_annual_review_framework_2024_sent003",
+          "sentence1_text": "Managers should schedule review meetings at least two weeks in advance and provide employees with self-evaluation forms.",
+          "sentence2_text": "Supervisors must schedule evaluation meetings with at least two weeks’ notice and distribute self-assessment materials.",
+          "document1": "21_performance_review_process_2023.md",
+          "document2": "22_annual_review_framework_2024.md",
+          "similarity_score": 0.9451,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "03_work_from_home_guidelines.md",
+      "doc2": "07_security_policy_for_remote_workers.md",
+      "conflict_count": 10,
+      "avg_similarity": 0.8916,
+      "max_similarity": 0.9687,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent008",
+          "sentence2_id": "07_security_policy_for_remote_workers_sent007",
+          "sentence1_text": "All company devices must have automatic screen locks enabled after 10 minutes of inactivity.",
+          "sentence2_text": "Device Management Company laptops must have automatic screen locks activated after 10 minutes of inactivity.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "07_security_policy_for_remote_workers.md",
+          "similarity_score": 0.9687,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent006",
+          "sentence2_id": "07_security_policy_for_remote_workers_sent006",
+          "sentence1_text": "Security Protocols Remote workers must ensure their workspace is private and secure.",
+          "sentence2_text": "Employees working from home must ensure their workspace is private and secure from unauthorized access.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "07_security_policy_for_remote_workers.md",
+          "similarity_score": 0.9465,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent001",
+          "sentence2_id": "07_security_policy_for_remote_workers_sent001",
+          "sentence1_text": "Document 3: Work From Home Guidelines Metadata: Guidelines-WFH-001, IT Department, March 2021 Remote Access Requirements All remote workers must use the company VPN when accessing corporate systems.",
+          "sentence2_text": "Document 7: Security Policy for Remote Workers Metadata: Policy-SEC-001, IT Security Department, February 2021 VPN and Network Security All remote employees must connect to corporate resources exclusively through the company-provided VPN client.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "07_security_policy_for_remote_workers.md",
+          "similarity_score": 0.9261,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "05_expense_reimbursement_policy_v20.md",
+      "doc2": "09_travel_and_expense_guidelines_sales_team.md",
+      "conflict_count": 10,
+      "avg_similarity": 0.8763,
+      "max_similarity": 0.9555,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "05_expense_reimbursement_policy_v20_sent007",
+          "sentence2_id": "09_travel_and_expense_guidelines_sales_team_sent007",
+          "sentence1_text": "Submission Process All expense reports must be submitted within 21 days of the expense being incurred using the new digital expense management system.",
+          "sentence2_text": "Expense Reporting Sales expenses must be submitted within 21 days of being incurred through the digital expense system.",
+          "document1": "05_expense_reimbursement_policy_v20.md",
+          "document2": "09_travel_and_expense_guidelines_sales_team.md",
+          "similarity_score": 0.9555,
+          "match_type": "high_similarity"
+        },
+        {
+          "sentence1_id": "05_expense_reimbursement_policy_v20_sent008",
+          "sentence2_id": "09_travel_and_expense_guidelines_sales_team_sent008",
+          "sentence1_text": "Reports should include digital receipts and detailed descriptions of business purposes.",
+          "sentence2_text": "All receipts must be attached digitally, and expenses over $25 require itemized receipts.",
+          "document1": "05_expense_reimbursement_policy_v20.md",
+          "document2": "09_travel_and_expense_guidelines_sales_team.md",
+          "similarity_score": 0.9025,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "05_expense_reimbursement_policy_v20_sent003",
+          "sentence2_id": "09_travel_and_expense_guidelines_sales_team_sent002",
+          "sentence1_text": "Meal reimbursements are limited to $60 per day for domestic travel and $90 per day for international travel, with receipts required for expenses over $25.",
+          "sentence2_text": "Meal expenses for client entertainment are limited to $100 per person for dinner and $50 per person for lunch.",
+          "document1": "05_expense_reimbursement_policy_v20.md",
+          "document2": "09_travel_and_expense_guidelines_sales_team.md",
+          "similarity_score": 0.881,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "04_expense_reimbursement_policy_v10.md",
+      "doc2": "09_travel_and_expense_guidelines_sales_team.md",
+      "conflict_count": 10,
+      "avg_similarity": 0.869,
+      "max_similarity": 0.9118,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "04_expense_reimbursement_policy_v10_sent007",
+          "sentence2_id": "09_travel_and_expense_guidelines_sales_team_sent007",
+          "sentence1_text": "Submission Process All expense reports must be submitted within 30 days of the expense being incurred.",
+          "sentence2_text": "Expense Reporting Sales expenses must be submitted within 21 days of being incurred through the digital expense system.",
+          "document1": "04_expense_reimbursement_policy_v10.md",
+          "document2": "09_travel_and_expense_guidelines_sales_team.md",
+          "similarity_score": 0.9118,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "04_expense_reimbursement_policy_v10_sent003",
+          "sentence2_id": "09_travel_and_expense_guidelines_sales_team_sent002",
+          "sentence1_text": "Meal reimbursements are limited to $50 per day for domestic travel and $75 per day for international travel.",
+          "sentence2_text": "Meal expenses for client entertainment are limited to $100 per person for dinner and $50 per person for lunch.",
+          "document1": "04_expense_reimbursement_policy_v10.md",
+          "document2": "09_travel_and_expense_guidelines_sales_team.md",
+          "similarity_score": 0.8907,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "04_expense_reimbursement_policy_v10_sent001",
+          "sentence2_id": "09_travel_and_expense_guidelines_sales_team_sent001",
+          "sentence1_text": "Document 4: Expense Reimbursement Policy v1.0 Metadata: Policy-EXP-001, Finance Department, January 2020 Travel Expenses Business travel must be pre-approved by direct supervisors.",
+          "sentence2_text": "Document 9: Travel and Expense Guidelines - Sales Team Metadata: Guidelines-SALES-001, Sales Department, June 2021 Client Entertainment Sales representatives may expense client entertainment including business meals and reasonable entertainment activities.",
+          "document1": "04_expense_reimbursement_policy_v10.md",
+          "document2": "09_travel_and_expense_guidelines_sales_team.md",
+          "similarity_score": 0.8687,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "07_security_policy_for_remote_workers.md",
+      "doc2": "13_it_security_training_module.md",
+      "conflict_count": 10,
+      "avg_similarity": 0.8643,
+      "max_similarity": 0.9014,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent004",
+          "sentence2_id": "13_it_security_training_module_sent008",
+          "sentence1_text": "Data Protection Confidential company information must never be stored on personal devices or cloud storage services.",
+          "sentence2_text": "Sensitive information should never be shared via unsecured channels such as personal email or messaging apps.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "13_it_security_training_module.md",
+          "similarity_score": 0.9014,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent004",
+          "sentence2_id": "13_it_security_training_module_sent007",
+          "sentence1_text": "Data Protection Confidential company information must never be stored on personal devices or cloud storage services.",
+          "sentence2_text": "Data Handling Confidential company data must be classified and handled according to our data classification policy.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "13_it_security_training_module.md",
+          "similarity_score": 0.8785,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent008",
+          "sentence2_id": "13_it_security_training_module_sent009",
+          "sentence1_text": "All devices require encrypted hard drives and up-to-date antivirus software.",
+          "sentence2_text": "All data transmissions must use encrypted channels and approved company systems.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "13_it_security_training_module.md",
+          "similarity_score": 0.8661,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "08_updated_remote_work_policy_v30.md",
+      "doc2": "10_covid_19_workplace_safety_protocol.md",
+      "conflict_count": 10,
+      "avg_similarity": 0.8628,
+      "max_similarity": 0.8864,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "08_updated_remote_work_policy_v30_sent002",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent004",
+          "sentence1_text": "Employees must complete remote work training before beginning any remote schedule.",
+          "sentence2_text": "Remote Work Expansion All employees capable of working remotely should do so until further notice.",
+          "document1": "08_updated_remote_work_policy_v30.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8864,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "08_updated_remote_work_policy_v30_sent004",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent006",
+          "sentence1_text": "Equipment and Support The company provides comprehensive remote work setups including laptop, monitor, keyboard, mouse, and headset.",
+          "sentence2_text": "Remote work equipment will be expedited to all employees transitioning to home offices.",
+          "document1": "08_updated_remote_work_policy_v30.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8743,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "08_updated_remote_work_policy_v30_sent005",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent006",
+          "sentence1_text": "Employees working remotely full-time receive a $800 annual home office allowance.",
+          "sentence2_text": "Remote work equipment will be expedited to all employees transitioning to home offices.",
+          "document1": "08_updated_remote_work_policy_v30.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8629,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "15_new_employee_onboarding_checklist.md",
+      "doc2": "16_employee_orientation_program.md",
+      "conflict_count": 9,
+      "avg_similarity": 0.8987,
+      "max_similarity": 0.9318,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "15_new_employee_onboarding_checklist_sent003",
+          "sentence2_id": "16_employee_orientation_program_sent003",
+          "sentence1_text": "HR will provide company handbook, benefits enrollment forms, and IT equipment assignment documentation.",
+          "sentence2_text": "The HR team will distribute company materials, benefits information, and technology equipment assignments.",
+          "document1": "15_new_employee_onboarding_checklist.md",
+          "document2": "16_employee_orientation_program.md",
+          "similarity_score": 0.9318,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "15_new_employee_onboarding_checklist_sent004",
+          "sentence2_id": "16_employee_orientation_program_sent004",
+          "sentence1_text": "Week One Activities Complete mandatory training modules including harassment prevention, data security, and company policies.",
+          "sentence2_text": "Initial Training Requirements All new employees must complete essential training modules during their first week, including workplace harassment prevention, information security protocols, and organizational policies.",
+          "document1": "15_new_employee_onboarding_checklist.md",
+          "document2": "16_employee_orientation_program.md",
+          "similarity_score": 0.9314,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "15_new_employee_onboarding_checklist_sent001",
+          "sentence2_id": "16_employee_orientation_program_sent001",
+          "sentence1_text": "Document 15: New Employee Onboarding Checklist Metadata: Checklist-HR-001, HR Department, August 2023 First Day Preparation New employees should arrive at 9:00 AM for orientation in the main conference room.",
+          "sentence2_text": "Document 16: Employee Orientation Program Metadata: Program-ORIENT-001, HR Department, October 2023 Welcome and Introduction New team members begin their TechFlow journey with a comprehensive orientation starting at 9:00 AM in Conference Room A.",
+          "document1": "15_new_employee_onboarding_checklist.md",
+          "document2": "16_employee_orientation_program.md",
+          "similarity_score": 0.9146,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "07_security_policy_for_remote_workers.md",
+      "doc2": "14_cybersecurity_best_practices.md",
+      "conflict_count": 9,
+      "avg_similarity": 0.8793,
+      "max_similarity": 0.9251,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent009",
+          "sentence2_id": "14_cybersecurity_best_practices_sent005",
+          "sentence1_text": "Remote workers should report any security incidents or suspicious activities immediately to the IT security team.",
+          "sentence2_text": "Suspicious emails should be reported to the IT security team immediately.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "14_cybersecurity_best_practices.md",
+          "similarity_score": 0.9251,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent002",
+          "sentence2_id": "14_cybersecurity_best_practices_sent009",
+          "sentence1_text": "Personal devices are not permitted to access company systems.",
+          "sentence2_text": "Personal devices and unsecured communication platforms are prohibited for business data.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "14_cybersecurity_best_practices.md",
+          "similarity_score": 0.9244,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent004",
+          "sentence2_id": "14_cybersecurity_best_practices_sent009",
+          "sentence1_text": "Data Protection Confidential company information must never be stored on personal devices or cloud storage services.",
+          "sentence2_text": "Personal devices and unsecured communication platforms are prohibited for business data.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "14_cybersecurity_best_practices.md",
+          "similarity_score": 0.8774,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "06_engineering_team_remote_work_guidelines.md",
+      "doc2": "08_updated_remote_work_policy_v30.md",
+      "conflict_count": 8,
+      "avg_similarity": 0.874,
+      "max_similarity": 0.8893,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "06_engineering_team_remote_work_guidelines_sent007",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent004",
+          "sentence1_text": "Equipment and Tools The engineering department provides each remote engineer with a high-performance laptop and development tools.",
+          "sentence2_text": "Equipment and Support The company provides comprehensive remote work setups including laptop, monitor, keyboard, mouse, and headset.",
+          "document1": "06_engineering_team_remote_work_guidelines.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.8893,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "06_engineering_team_remote_work_guidelines_sent004",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent007",
+          "sentence1_text": "Communication and Collaboration Engineering team members should be available during core collaboration hours from 10 AM to 2 PM EST.",
+          "sentence2_text": "Communication Standards Remote employees should maintain availability during team core hours, which vary by department.",
+          "document1": "06_engineering_team_remote_work_guidelines.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.8846,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "06_engineering_team_remote_work_guidelines_sent006",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent008",
+          "sentence1_text": "All engineers must attend the weekly all-hands meeting on Thursdays, either in-person or via video conference.",
+          "sentence2_text": "Weekly team meetings are mandatory but can be attended virtually.",
+          "document1": "06_engineering_team_remote_work_guidelines.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.8799,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "02_remote_work_policy_v20.md",
+      "doc2": "10_covid_19_workplace_safety_protocol.md",
+      "conflict_count": 8,
+      "avg_similarity": 0.8632,
+      "max_similarity": 0.8786,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent003",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent004",
+          "sentence1_text": "New hires may be eligible for remote work immediately if hired for a designated remote position.",
+          "sentence2_text": "Remote Work Expansion All employees capable of working remotely should do so until further notice.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8786,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent008",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent004",
+          "sentence1_text": "All employees should attend weekly team meetings virtually or in-person.",
+          "sentence2_text": "Remote Work Expansion All employees capable of working remotely should do so until further notice.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8684,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent003",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent006",
+          "sentence1_text": "New hires may be eligible for remote work immediately if hired for a designated remote position.",
+          "sentence2_text": "Remote work equipment will be expedited to all employees transitioning to home offices.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8661,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "02_remote_work_policy_v20.md",
+      "doc2": "03_work_from_home_guidelines.md",
+      "conflict_count": 7,
+      "avg_similarity": 0.8781,
+      "max_similarity": 0.9348,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent005",
+          "sentence2_id": "03_work_from_home_guidelines_sent005",
+          "sentence1_text": "Employees working remotely more than 3 days per week are eligible for a $500 annual home office stipend.",
+          "sentence2_text": "Home office equipment stipends of up to $500 annually are available for qualifying employees.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "03_work_from_home_guidelines.md",
+          "similarity_score": 0.9348,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent004",
+          "sentence2_id": "03_work_from_home_guidelines_sent003",
+          "sentence1_text": "Section B: Equipment and Expenses The company will provide a laptop, monitor, and necessary software licenses for remote work.",
+          "sentence2_text": "Equipment Provision The IT department will provide each remote employee with a laptop computer and necessary software licenses.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "03_work_from_home_guidelines.md",
+          "similarity_score": 0.9133,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent001",
+          "sentence2_id": "03_work_from_home_guidelines_sent001",
+          "sentence1_text": "Document 2: Remote Work Policy v2.0 Metadata: Policy-RW-002, HR Department, March 2021 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements.",
+          "sentence2_text": "Document 3: Work From Home Guidelines Metadata: Guidelines-WFH-001, IT Department, March 2021 Remote Access Requirements All remote workers must use the company VPN when accessing corporate systems.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "03_work_from_home_guidelines.md",
+          "similarity_score": 0.8709,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "01_remote_work_policy_v10.md",
+      "doc2": "07_security_policy_for_remote_workers.md",
+      "conflict_count": 7,
+      "avg_similarity": 0.8684,
+      "max_similarity": 0.8955,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent004",
+          "sentence2_id": "07_security_policy_for_remote_workers_sent006",
+          "sentence1_text": "Employees are responsible for providing their own internet connection and workspace.",
+          "sentence2_text": "Employees working from home must ensure their workspace is private and secure from unauthorized access.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "07_security_policy_for_remote_workers.md",
+          "similarity_score": 0.8955,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent001",
+          "sentence2_id": "07_security_policy_for_remote_workers_sent001",
+          "sentence1_text": "Document 1: Remote Work Policy v1.0 Metadata: Policy-RW-001, HR Department, January 2020 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements.",
+          "sentence2_text": "Document 7: Security Policy for Remote Workers Metadata: Policy-SEC-001, IT Security Department, February 2021 VPN and Network Security All remote employees must connect to corporate resources exclusively through the company-provided VPN client.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "07_security_policy_for_remote_workers.md",
+          "similarity_score": 0.8791,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent004",
+          "sentence2_id": "07_security_policy_for_remote_workers_sent005",
+          "sentence1_text": "Employees are responsible for providing their own internet connection and workspace.",
+          "sentence2_text": "All work-related data should remain on company-provided equipment.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "07_security_policy_for_remote_workers.md",
+          "similarity_score": 0.8715,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "03_work_from_home_guidelines.md",
+      "doc2": "08_updated_remote_work_policy_v30.md",
+      "conflict_count": 6,
+      "avg_similarity": 0.8776,
+      "max_similarity": 0.9122,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent005",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent005",
+          "sentence1_text": "Home office equipment stipends of up to $500 annually are available for qualifying employees.",
+          "sentence2_text": "Employees working remotely full-time receive a $800 annual home office allowance.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.9122,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent003",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent004",
+          "sentence1_text": "Equipment Provision The IT department will provide each remote employee with a laptop computer and necessary software licenses.",
+          "sentence2_text": "Equipment and Support The company provides comprehensive remote work setups including laptop, monitor, keyboard, mouse, and headset.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.8987,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent001",
+          "sentence2_id": "08_updated_remote_work_policy_v30_sent001",
+          "sentence1_text": "Document 3: Work From Home Guidelines Metadata: Guidelines-WFH-001, IT Department, March 2021 Remote Access Requirements All remote workers must use the company VPN when accessing corporate systems.",
+          "sentence2_text": "Document 8: Updated Remote Work Policy v3.0 Metadata: Policy-RW-003, HR Department, January 2024 Eligibility Requirements All employees are eligible for remote work arrangements regardless of tenure, subject to role requirements and manager approval.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "08_updated_remote_work_policy_v30.md",
+          "similarity_score": 0.8851,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "01_remote_work_policy_v10.md",
+      "doc2": "03_work_from_home_guidelines.md",
+      "conflict_count": 5,
+      "avg_similarity": 0.8762,
+      "max_similarity": 0.9217,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent003",
+          "sentence2_id": "03_work_from_home_guidelines_sent003",
+          "sentence1_text": "Section B: Equipment Policy The company will provide a laptop and necessary software licenses for remote work.",
+          "sentence2_text": "Equipment Provision The IT department will provide each remote employee with a laptop computer and necessary software licenses.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "03_work_from_home_guidelines.md",
+          "similarity_score": 0.9217,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent001",
+          "sentence2_id": "03_work_from_home_guidelines_sent001",
+          "sentence1_text": "Document 1: Remote Work Policy v1.0 Metadata: Policy-RW-001, HR Department, January 2020 Section A: Eligibility All employees must have completed their probationary period of 6 months before becoming eligible for remote work arrangements.",
+          "sentence2_text": "Document 3: Work From Home Guidelines Metadata: Guidelines-WFH-001, IT Department, March 2021 Remote Access Requirements All remote workers must use the company VPN when accessing corporate systems.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "03_work_from_home_guidelines.md",
+          "similarity_score": 0.8713,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent004",
+          "sentence2_id": "03_work_from_home_guidelines_sent006",
+          "sentence1_text": "Employees are responsible for providing their own internet connection and workspace.",
+          "sentence2_text": "Security Protocols Remote workers must ensure their workspace is private and secure.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "03_work_from_home_guidelines.md",
+          "similarity_score": 0.8675,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "01_remote_work_policy_v10.md",
+      "doc2": "06_engineering_team_remote_work_guidelines.md",
+      "conflict_count": 5,
+      "avg_similarity": 0.8746,
+      "max_similarity": 0.9038,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent007",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent006",
+          "sentence1_text": "All employees must attend mandatory in-person meetings on Wednesdays.",
+          "sentence2_text": "All engineers must attend the weekly all-hands meeting on Thursdays, either in-person or via video conference.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.9038,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent006",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent004",
+          "sentence1_text": "Section C: Communication Requirements Remote employees must be available during core business hours from 9 AM to 3 PM EST.",
+          "sentence2_text": "Communication and Collaboration Engineering team members should be available during core collaboration hours from 10 AM to 2 PM EST.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.8819,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent008",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent005",
+          "sentence1_text": "Daily check-ins with supervisors are required via email or Slack.",
+          "sentence2_text": "Daily standups are conducted virtually every morning at 9 AM.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.8701,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "02_remote_work_policy_v20.md",
+      "doc2": "06_engineering_team_remote_work_guidelines.md",
+      "conflict_count": 4,
+      "avg_similarity": 0.8772,
+      "max_similarity": 0.9019,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent008",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent006",
+          "sentence1_text": "All employees should attend weekly team meetings virtually or in-person.",
+          "sentence2_text": "All engineers must attend the weekly all-hands meeting on Thursdays, either in-person or via video conference.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.9019,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent007",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent004",
+          "sentence1_text": "Section C: Communication Requirements Remote employees must be available during core business hours from 10 AM to 2 PM EST.",
+          "sentence2_text": "Communication and Collaboration Engineering team members should be available during core collaboration hours from 10 AM to 2 PM EST.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.8942,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "02_remote_work_policy_v20_sent004",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent007",
+          "sentence1_text": "Section B: Equipment and Expenses The company will provide a laptop, monitor, and necessary software licenses for remote work.",
+          "sentence2_text": "Equipment and Tools The engineering department provides each remote engineer with a high-performance laptop and development tools.",
+          "document1": "02_remote_work_policy_v20.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.8623,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "10_covid_19_workplace_safety_protocol.md",
+      "doc2": "24_office_safety_protocols.md",
+      "conflict_count": 4,
+      "avg_similarity": 0.866,
+      "max_similarity": 0.896,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "10_covid_19_workplace_safety_protocol_sent001",
+          "sentence2_id": "24_office_safety_protocols_sent001",
+          "sentence1_text": "Document 10: COVID-19 Workplace Safety Protocol Metadata: Protocol-COVID-001, Safety Department, March 2020 Office Occupancy Office capacity is limited to 25% of normal occupancy levels.",
+          "sentence2_text": "Document 24: Office Safety Protocols Metadata: Protocols-SAFETY-002, Safety Department, September 2023 Emergency Response All staff members should be familiar with building evacuation procedures and designated assembly locations.",
+          "document1": "10_covid_19_workplace_safety_protocol.md",
+          "document2": "24_office_safety_protocols.md",
+          "similarity_score": 0.896,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "10_covid_19_workplace_safety_protocol_sent005",
+          "sentence2_id": "24_office_safety_protocols_sent009",
+          "sentence1_text": "Essential on-site workers must follow strict safety protocols including mask wearing and social distancing.",
+          "sentence2_text": "Comprehensive training on proper PPE use is provided to all relevant employees.",
+          "document1": "10_covid_19_workplace_safety_protocol.md",
+          "document2": "24_office_safety_protocols.md",
+          "similarity_score": 0.8603,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "10_covid_19_workplace_safety_protocol_sent005",
+          "sentence2_id": "24_office_safety_protocols_sent007",
+          "sentence1_text": "Essential on-site workers must follow strict safety protocols including mask wearing and social distancing.",
+          "sentence2_text": "Required Safety Equipment Personnel in specified work areas must utilize appropriate personal protective equipment according to position requirements.",
+          "document1": "10_covid_19_workplace_safety_protocol.md",
+          "document2": "24_office_safety_protocols.md",
+          "similarity_score": 0.8571,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "10_covid_19_workplace_safety_protocol.md",
+      "doc2": "23_workplace_safety_manual.md",
+      "conflict_count": 4,
+      "avg_similarity": 0.8594,
+      "max_similarity": 0.8669,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "10_covid_19_workplace_safety_protocol_sent005",
+          "sentence2_id": "23_workplace_safety_manual_sent007",
+          "sentence1_text": "Essential on-site workers must follow strict safety protocols including mask wearing and social distancing.",
+          "sentence2_text": "Personal Protective Equipment Employees working in designated areas must use appropriate personal protective equipment as specified in job descriptions.",
+          "document1": "10_covid_19_workplace_safety_protocol.md",
+          "document2": "23_workplace_safety_manual.md",
+          "similarity_score": 0.8669,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "10_covid_19_workplace_safety_protocol_sent001",
+          "sentence2_id": "23_workplace_safety_manual_sent001",
+          "sentence1_text": "Document 10: COVID-19 Workplace Safety Protocol Metadata: Protocol-COVID-001, Safety Department, March 2020 Office Occupancy Office capacity is limited to 25% of normal occupancy levels.",
+          "sentence2_text": "Document 23: Workplace Safety Manual Metadata: Manual-SAFETY-001, Safety Department, June 2023 Emergency Procedures All employees must familiarize themselves with building evacuation routes and emergency assembly points.",
+          "document1": "10_covid_19_workplace_safety_protocol.md",
+          "document2": "23_workplace_safety_manual.md",
+          "similarity_score": 0.8609,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "10_covid_19_workplace_safety_protocol_sent005",
+          "sentence2_id": "23_workplace_safety_manual_sent009",
+          "sentence1_text": "Essential on-site workers must follow strict safety protocols including mask wearing and social distancing.",
+          "sentence2_text": "Proper training on PPE usage is provided for all affected employees.",
+          "document1": "10_covid_19_workplace_safety_protocol.md",
+          "document2": "23_workplace_safety_manual.md",
+          "similarity_score": 0.8593,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "01_remote_work_policy_v10.md",
+      "doc2": "10_covid_19_workplace_safety_protocol.md",
+      "conflict_count": 4,
+      "avg_similarity": 0.8593,
+      "max_similarity": 0.8708,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent003",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent006",
+          "sentence1_text": "Section B: Equipment Policy The company will provide a laptop and necessary software licenses for remote work.",
+          "sentence2_text": "Remote work equipment will be expedited to all employees transitioning to home offices.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8708,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent002",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent004",
+          "sentence1_text": "Employees must submit a formal request to their direct manager and receive written approval before beginning any remote work schedule.",
+          "sentence2_text": "Remote Work Expansion All employees capable of working remotely should do so until further notice.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8612,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "01_remote_work_policy_v10_sent002",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent002",
+          "sentence1_text": "Employees must submit a formal request to their direct manager and receive written approval before beginning any remote work schedule.",
+          "sentence2_text": "Employees must reserve workspace in advance through the building management system.",
+          "document1": "01_remote_work_policy_v10.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8547,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "07_security_policy_for_remote_workers.md",
+      "doc2": "10_covid_19_workplace_safety_protocol.md",
+      "conflict_count": 4,
+      "avg_similarity": 0.8541,
+      "max_similarity": 0.8607,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent006",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent002",
+          "sentence1_text": "Employees working from home must ensure their workspace is private and secure from unauthorized access.",
+          "sentence2_text": "Employees must reserve workspace in advance through the building management system.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8607,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent009",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent007",
+          "sentence1_text": "Remote workers should report any security incidents or suspicious activities immediately to the IT security team.",
+          "sentence2_text": "Health and Safety Employees experiencing any COVID-19 symptoms must work from home and notify HR immediately.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8529,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "07_security_policy_for_remote_workers_sent006",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent007",
+          "sentence1_text": "Employees working from home must ensure their workspace is private and secure from unauthorized access.",
+          "sentence2_text": "Health and Safety Employees experiencing any COVID-19 symptoms must work from home and notify HR immediately.",
+          "document1": "07_security_policy_for_remote_workers.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8522,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "03_work_from_home_guidelines.md",
+      "doc2": "06_engineering_team_remote_work_guidelines.md",
+      "conflict_count": 3,
+      "avg_similarity": 0.9029,
+      "max_similarity": 0.9331,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent002",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent003",
+          "sentence1_text": "Employees working from home need to ensure their internet connection meets minimum speed requirements of 25 Mbps download and 5 Mbps upload.",
+          "sentence2_text": "Remote developers need a minimum internet speed of 25 Mbps download and 5 Mbps upload for effective collaboration.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.9331,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent003",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent007",
+          "sentence1_text": "Equipment Provision The IT department will provide each remote employee with a laptop computer and necessary software licenses.",
+          "sentence2_text": "Equipment and Tools The engineering department provides each remote engineer with a high-performance laptop and development tools.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.8936,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent001",
+          "sentence2_id": "06_engineering_team_remote_work_guidelines_sent001",
+          "sentence1_text": "Document 3: Work From Home Guidelines Metadata: Guidelines-WFH-001, IT Department, March 2021 Remote Access Requirements All remote workers must use the company VPN when accessing corporate systems.",
+          "sentence2_text": "Document 6: Engineering Team Remote Work Guidelines Metadata: Guidelines-ENG-001, Engineering Department, April 2021 Development Environment Setup Engineers working remotely must ensure their development environment matches production specifications.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "06_engineering_team_remote_work_guidelines.md",
+          "similarity_score": 0.8821,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "13_it_security_training_module.md",
+      "doc2": "20_customer_information_protection_guidelines.md",
+      "conflict_count": 3,
+      "avg_similarity": 0.8688,
+      "max_similarity": 0.8851,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "13_it_security_training_module_sent009",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent005",
+          "sentence1_text": "All data transmissions must use encrypted channels and approved company systems.",
+          "sentence2_text": "All information transfers utilize industry-standard encryption technologies.",
+          "document1": "13_it_security_training_module.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.8851,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "13_it_security_training_module_sent009",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent004",
+          "sentence1_text": "All data transmissions must use encrypted channels and approved company systems.",
+          "sentence2_text": "Security and Storage Protocols Customer data resides in encrypted, secure database systems with restricted access limited to authorized staff members.",
+          "document1": "13_it_security_training_module.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.8642,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "13_it_security_training_module_sent007",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent004",
+          "sentence1_text": "Data Handling Confidential company data must be classified and handled according to our data classification policy.",
+          "sentence2_text": "Security and Storage Protocols Customer data resides in encrypted, secure database systems with restricted access limited to authorized staff members.",
+          "document1": "13_it_security_training_module.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.8571,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "03_work_from_home_guidelines.md",
+      "doc2": "10_covid_19_workplace_safety_protocol.md",
+      "conflict_count": 3,
+      "avg_similarity": 0.8684,
+      "max_similarity": 0.8756,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent003",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent006",
+          "sentence1_text": "Equipment Provision The IT department will provide each remote employee with a laptop computer and necessary software licenses.",
+          "sentence2_text": "Remote work equipment will be expedited to all employees transitioning to home offices.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8756,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent004",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent006",
+          "sentence1_text": "A secondary monitor will be provided for employees working remotely more than three days per week.",
+          "sentence2_text": "Remote work equipment will be expedited to all employees transitioning to home offices.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8749,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "03_work_from_home_guidelines_sent005",
+          "sentence2_id": "10_covid_19_workplace_safety_protocol_sent006",
+          "sentence1_text": "Home office equipment stipends of up to $500 annually are available for qualifying employees.",
+          "sentence2_text": "Remote work equipment will be expedited to all employees transitioning to home offices.",
+          "document1": "03_work_from_home_guidelines.md",
+          "document2": "10_covid_19_workplace_safety_protocol.md",
+          "similarity_score": 0.8547,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "14_cybersecurity_best_practices.md",
+      "doc2": "20_customer_information_protection_guidelines.md",
+      "conflict_count": 3,
+      "avg_similarity": 0.8631,
+      "max_similarity": 0.8709,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "14_cybersecurity_best_practices_sent008",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent005",
+          "sentence1_text": "Confidential information transmission must occur through encrypted, company-approved channels only.",
+          "sentence2_text": "All information transfers utilize industry-standard encryption technologies.",
+          "document1": "14_cybersecurity_best_practices.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.8709,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "14_cybersecurity_best_practices_sent007",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent004",
+          "sentence1_text": "Information Protection Company data must be classified according to sensitivity levels and handled with appropriate security measures.",
+          "sentence2_text": "Security and Storage Protocols Customer data resides in encrypted, secure database systems with restricted access limited to authorized staff members.",
+          "document1": "14_cybersecurity_best_practices.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.8652,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "14_cybersecurity_best_practices_sent008",
+          "sentence2_id": "20_customer_information_protection_guidelines_sent004",
+          "sentence1_text": "Confidential information transmission must occur through encrypted, company-approved channels only.",
+          "sentence2_text": "Security and Storage Protocols Customer data resides in encrypted, secure database systems with restricted access limited to authorized staff members.",
+          "document1": "14_cybersecurity_best_practices.md",
+          "document2": "20_customer_information_protection_guidelines.md",
+          "similarity_score": 0.8532,
+          "match_type": "potential_conflict"
+        }
+      ]
+    },
+    {
+      "doc1": "14_cybersecurity_best_practices.md",
+      "doc2": "19_client_data_privacy_policy.md",
+      "conflict_count": 3,
+      "avg_similarity": 0.8595,
+      "max_similarity": 0.869,
+      "relationship_type": "related_policy",
+      "top_conflicts": [
+        {
+          "sentence1_id": "14_cybersecurity_best_practices_sent008",
+          "sentence2_id": "19_client_data_privacy_policy_sent005",
+          "sentence1_text": "Confidential information transmission must occur through encrypted, company-approved channels only.",
+          "sentence2_text": "All data transmissions use industry-standard encryption protocols.",
+          "document1": "14_cybersecurity_best_practices.md",
+          "document2": "19_client_data_privacy_policy.md",
+          "similarity_score": 0.869,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "14_cybersecurity_best_practices_sent007",
+          "sentence2_id": "19_client_data_privacy_policy_sent004",
+          "sentence1_text": "Information Protection Company data must be classified according to sensitivity levels and handled with appropriate security measures.",
+          "sentence2_text": "Data Storage and Security Client information is stored in secure, encrypted databases with access limited to authorized personnel only.",
+          "document1": "14_cybersecurity_best_practices.md",
+          "document2": "19_client_data_privacy_policy.md",
+          "similarity_score": 0.8565,
+          "match_type": "potential_conflict"
+        },
+        {
+          "sentence1_id": "14_cybersecurity_best_practices_sent008",
+          "sentence2_id": "19_client_data_privacy_policy_sent004",
+          "sentence1_text": "Confidential information transmission must occur through encrypted, company-approved channels only.",
+          "sentence2_text": "Data Storage and Security Client information is stored in secure, encrypted databases with access limited to authorized personnel only.",
+          "document1": "14_cybersecurity_best_practices.md",
+          "document2": "19_client_data_privacy_policy.md",
+          "similarity_score": 0.8529,
+          "match_type": "potential_conflict"
+        }
+      ]
+    }
+  ],
+  "removal_recommendations": [
+    {
+      "document": "11_employee_benefits_overview_2023.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "12_updated_benefits_package_2024.md"
+      ],
+      "confidence_score": 0.943,
+      "evidence": [
+        "13 conflicting sentences",
+        "Average similarity: 0.943",
+        "Relationship: duplicate_content"
+      ]
+    },
+    {
+      "document": "19_client_data_privacy_policy.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "20_customer_information_protection_guidelines.md"
+      ],
+      "confidence_score": 0.92,
+      "evidence": [
+        "12 conflicting sentences",
+        "Average similarity: 0.920",
+        "Relationship: duplicate_content"
+      ]
+    },
+    {
+      "document": "23_workplace_safety_manual.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "24_office_safety_protocols.md"
+      ],
+      "confidence_score": 0.909,
+      "evidence": [
+        "20 conflicting sentences",
+        "Average similarity: 0.909",
+        "Relationship: related_policy"
+      ]
+    },
+    {
+      "document": "27_marketing_campaign_guidelines.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "28_digital_marketing_standards.md"
+      ],
+      "confidence_score": 0.908,
+      "evidence": [
+        "16 conflicting sentences",
+        "Average similarity: 0.908",
+        "Relationship: related_policy"
+      ]
+    },
+    {
+      "document": "17_code_review_guidelines.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "18_software_development_standards.md"
+      ],
+      "confidence_score": 0.905,
+      "evidence": [
+        "16 conflicting sentences",
+        "Average similarity: 0.905",
+        "Relationship: related_policy"
+      ]
+    },
+    {
+      "document": "21_performance_review_process_2023.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "22_annual_review_framework_2024.md"
+      ],
+      "confidence_score": 0.904,
+      "evidence": [
+        "12 conflicting sentences",
+        "Average similarity: 0.904",
+        "Relationship: related_policy"
+      ]
+    },
+    {
+      "document": "25_vendor_management_policy.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "26_supplier_relationship_guidelines.md"
+      ],
+      "confidence_score": 0.903,
+      "evidence": [
+        "14 conflicting sentences",
+        "Average similarity: 0.903",
+        "Relationship: related_policy"
+      ]
+    },
+    {
+      "document": "03_work_from_home_guidelines.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "06_engineering_team_remote_work_guidelines.md"
+      ],
+      "confidence_score": 0.903,
+      "evidence": [
+        "3 conflicting sentences",
+        "Average similarity: 0.903",
+        "Relationship: related_policy"
+      ]
+    },
+    {
+      "document": "29_customer_support_procedures.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "High content overlap with newer version",
+      "conflicting_documents": [
+        "30_client_service_standards.md"
+      ],
+      "confidence_score": 0.901,
+      "evidence": [
+        "14 conflicting sentences",
+        "Average similarity: 0.901",
+        "Relationship: related_policy"
+      ]
+    },
+    {
+      "document": "04_expense_reimbursement_policy_v10.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "Superseded by newer version: 05_expense_reimbursement_policy_v20.md",
+      "conflicting_documents": [
+        "05_expense_reimbursement_policy_v20.md"
+      ],
+      "confidence_score": 0.9,
+      "evidence": [
+        "Multiple versions of same policy found",
+        "Total conflicts between versions: 24",
+        "Keeping newest: 05_expense_reimbursement_policy_v20.md",
+        "Older versions: 04_expense_reimbursement_policy_v10.md"
+      ]
+    },
+    {
+      "document": "01_remote_work_policy_v10.md, 02_remote_work_policy_v20.md",
+      "recommendation_type": "remove_outdated",
+      "reason": "Superseded by newer version: 08_updated_remote_work_policy_v30.md",
+      "conflicting_documents": [
+        "08_updated_remote_work_policy_v30.md"
+      ],
+      "confidence_score": 0.9,
+      "evidence": [
+        "Multiple versions of same policy found",
+        "Total conflicts between versions: 48",
+        "Keeping newest: 08_updated_remote_work_policy_v30.md",
+        "Older versions: 01_remote_work_policy_v10.md, 02_remote_work_policy_v20.md"
+      ]
+    }
+  ],
+  "document_metadata": {
+    "27_marketing_campaign_guidelines.md": {
+      "filename": "27_marketing_campaign_guidelines.md",
+      "base_name": "marketing_campaign_guidelines",
+      "version": null,
+      "year": null,
+      "department": "Sales/Marketing",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "13_it_security_training_module.md": {
+      "filename": "13_it_security_training_module.md",
+      "base_name": "it_security_training_module",
+      "version": null,
+      "year": null,
+      "department": "IT",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "29_customer_support_procedures.md": {
+      "filename": "29_customer_support_procedures.md",
+      "base_name": "customer_support_procedures",
+      "version": null,
+      "year": null,
+      "department": "Sales/Marketing",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "04_expense_reimbursement_policy_v10.md": {
+      "filename": "04_expense_reimbursement_policy_v10.md",
+      "base_name": "expense_reimbursement_policy",
+      "version": "v1.0",
+      "year": null,
+      "department": "Finance",
+      "is_updated": false,
+      "has_version": true,
+      "has_year": false
+    },
+    "02_remote_work_policy_v20.md": {
+      "filename": "02_remote_work_policy_v20.md",
+      "base_name": "remote_work_policy",
+      "version": "v2.0",
+      "year": null,
+      "department": "General",
+      "is_updated": false,
+      "has_version": true,
+      "has_year": false
+    },
+    "28_digital_marketing_standards.md": {
+      "filename": "28_digital_marketing_standards.md",
+      "base_name": "digital_marketing_standards",
+      "version": null,
+      "year": null,
+      "department": "IT",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "15_new_employee_onboarding_checklist.md": {
+      "filename": "15_new_employee_onboarding_checklist.md",
+      "base_name": "new_employee_onboarding_checklist",
+      "version": null,
+      "year": null,
+      "department": "HR",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "14_cybersecurity_best_practices.md": {
+      "filename": "14_cybersecurity_best_practices.md",
+      "base_name": "cybersecurity_best_practices",
+      "version": null,
+      "year": null,
+      "department": "IT",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "10_covid_19_workplace_safety_protocol.md": {
+      "filename": "10_covid_19_workplace_safety_protocol.md",
+      "base_name": "covid_19_workplace_safety_protocol",
+      "version": null,
+      "year": null,
+      "department": "Safety",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "11_employee_benefits_overview_2023.md": {
+      "filename": "11_employee_benefits_overview_2023.md",
+      "base_name": "employee_benefits_overview",
+      "version": null,
+      "year": 2023,
+      "department": "HR",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": true
+    },
+    "17_code_review_guidelines.md": {
+      "filename": "17_code_review_guidelines.md",
+      "base_name": "code_review_guidelines",
+      "version": null,
+      "year": null,
+      "department": "HR",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "03_work_from_home_guidelines.md": {
+      "filename": "03_work_from_home_guidelines.md",
+      "base_name": "work_from_home_guidelines",
+      "version": null,
+      "year": null,
+      "department": "General",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "22_annual_review_framework_2024.md": {
+      "filename": "22_annual_review_framework_2024.md",
+      "base_name": "annual_review_framework",
+      "version": null,
+      "year": 2024,
+      "department": "HR",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": true
+    },
+    "06_engineering_team_remote_work_guidelines.md": {
+      "filename": "06_engineering_team_remote_work_guidelines.md",
+      "base_name": "engineering_team_remote_work_guidelines",
+      "version": null,
+      "year": null,
+      "department": "Engineering",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "01_remote_work_policy_v10.md": {
+      "filename": "01_remote_work_policy_v10.md",
+      "base_name": "remote_work_policy",
+      "version": "v1.0",
+      "year": null,
+      "department": "General",
+      "is_updated": false,
+      "has_version": true,
+      "has_year": false
+    },
+    "20_customer_information_protection_guidelines.md": {
+      "filename": "20_customer_information_protection_guidelines.md",
+      "base_name": "customer_information_protection_guidelines",
+      "version": null,
+      "year": null,
+      "department": "Sales/Marketing",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "21_performance_review_process_2023.md": {
+      "filename": "21_performance_review_process_2023.md",
+      "base_name": "performance_review_process",
+      "version": null,
+      "year": 2023,
+      "department": "HR",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": true
+    },
+    "18_software_development_standards.md": {
+      "filename": "18_software_development_standards.md",
+      "base_name": "software_development_standards",
+      "version": null,
+      "year": null,
+      "department": "Engineering",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "23_workplace_safety_manual.md": {
+      "filename": "23_workplace_safety_manual.md",
+      "base_name": "workplace_safety_manual",
+      "version": null,
+      "year": null,
+      "department": "Safety",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "07_security_policy_for_remote_workers.md": {
+      "filename": "07_security_policy_for_remote_workers.md",
+      "base_name": "security_policy_for_remote_workers",
+      "version": null,
+      "year": null,
+      "department": "IT",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "05_expense_reimbursement_policy_v20.md": {
+      "filename": "05_expense_reimbursement_policy_v20.md",
+      "base_name": "expense_reimbursement_policy",
+      "version": "v2.0",
+      "year": null,
+      "department": "Finance",
+      "is_updated": false,
+      "has_version": true,
+      "has_year": false
+    },
+    "16_employee_orientation_program.md": {
+      "filename": "16_employee_orientation_program.md",
+      "base_name": "employee_orientation_program",
+      "version": null,
+      "year": null,
+      "department": "HR",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "25_vendor_management_policy.md": {
+      "filename": "25_vendor_management_policy.md",
+      "base_name": "vendor_management_policy",
+      "version": null,
+      "year": null,
+      "department": "Finance",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "30_client_service_standards.md": {
+      "filename": "30_client_service_standards.md",
+      "base_name": "client_service_standards",
+      "version": null,
+      "year": null,
+      "department": "Sales/Marketing",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "24_office_safety_protocols.md": {
+      "filename": "24_office_safety_protocols.md",
+      "base_name": "office_safety_protocols",
+      "version": null,
+      "year": null,
+      "department": "Safety",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "08_updated_remote_work_policy_v30.md": {
+      "filename": "08_updated_remote_work_policy_v30.md",
+      "base_name": "remote_work_policy",
+      "version": "v3.0",
+      "year": null,
+      "department": "General",
+      "is_updated": true,
+      "has_version": true,
+      "has_year": false
+    },
+    "12_updated_benefits_package_2024.md": {
+      "filename": "12_updated_benefits_package_2024.md",
+      "base_name": "benefits_package",
+      "version": null,
+      "year": 2024,
+      "department": "HR",
+      "is_updated": true,
+      "has_version": false,
+      "has_year": true
+    },
+    "09_travel_and_expense_guidelines_sales_team.md": {
+      "filename": "09_travel_and_expense_guidelines_sales_team.md",
+      "base_name": "travel_and_expense_guidelines_sales_team",
+      "version": null,
+      "year": null,
+      "department": "Sales/Marketing",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "19_client_data_privacy_policy.md": {
+      "filename": "19_client_data_privacy_policy.md",
+      "base_name": "client_data_privacy_policy",
+      "version": null,
+      "year": null,
+      "department": "Sales/Marketing",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    },
+    "26_supplier_relationship_guidelines.md": {
+      "filename": "26_supplier_relationship_guidelines.md",
+      "base_name": "supplier_relationship_guidelines",
+      "version": null,
+      "year": null,
+      "department": "Finance",
+      "is_updated": false,
+      "has_version": false,
+      "has_year": false
+    }
+  }
+}
