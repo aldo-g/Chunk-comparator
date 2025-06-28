@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Conflict Dashboard</title>
+    <title>Document Conflict Analysis</title>
     <style>
         * {
             margin: 0;
@@ -12,471 +12,704 @@
         }
         
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding: 20px;
-        }
-        
-        .container {
-            max-width: 1400px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 20px;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f3f3f3;
+            color: #333;
+            line-height: 1.5;
         }
         
         .header {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 30px;
-            text-align: center;
+            background: #fff;
+            border-bottom: 1px solid #e6e6e6;
+            padding: 24px 32px;
         }
         
         .header h1 {
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            font-weight: 300;
+            font-size: 24px;
+            font-weight: 400;
+            color: #262626;
+            margin: 0;
         }
         
         .header p {
-            font-size: 1.1em;
-            opacity: 0.9;
+            color: #666;
+            margin: 4px 0 0 0;
+            font-size: 14px;
         }
         
-        .stats-grid {
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 24px;
+        }
+        
+        .metrics-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 20px;
-            padding: 30px;
-            background: #f8f9ff;
+            gap: 16px;
+            margin-bottom: 32px;
         }
         
-        .stat-card {
-            background: white;
-            padding: 25px;
-            border-radius: 15px;
+        .metric-card {
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 4px;
+            padding: 24px;
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
-            border-left: 4px solid #667eea;
         }
         
-        .stat-number {
-            font-size: 2.5em;
-            font-weight: bold;
-            color: #667eea;
-            margin-bottom: 5px;
+        .metric-value {
+            font-size: 36px;
+            font-weight: 300;
+            color: #262626;
+            line-height: 1;
+            margin-bottom: 8px;
         }
         
-        .stat-label {
+        .metric-label {
+            font-size: 14px;
             color: #666;
-            font-size: 0.9em;
             text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
         
-        .main-content {
-            padding: 30px;
+        .content-section {
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 4px;
+            margin-bottom: 24px;
         }
         
-        .section {
-            margin-bottom: 40px;
+        .section-header {
+            padding: 20px 24px;
+            border-bottom: 1px solid #e6e6e6;
+            background: #fafafa;
         }
         
-        .section h2 {
-            color: #333;
+        .section-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #262626;
+            margin: 0;
+        }
+        
+        .section-subtitle {
+            font-size: 14px;
+            color: #666;
+            margin: 4px 0 0 0;
+        }
+        
+        .section-content {
+            padding: 24px;
+            background: #f8f9fa;
+        }
+        
+        .conflict-item {
+            padding: 24px;
             margin-bottom: 20px;
-            font-size: 1.8em;
             display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        
-        .section-icon {
-            font-size: 1.2em;
-        }
-        
-        .recommendations-grid {
-            display: grid;
-            gap: 20px;
-        }
-        
-        .recommendation-card {
-            background: white;
-            border: 2px solid #e1e5e9;
-            border-radius: 15px;
-            padding: 25px;
+            flex-direction: column;
+            gap: 16px;
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.06);
             transition: all 0.3s ease;
             position: relative;
         }
         
-        .recommendation-card.selected {
-            border-color: #667eea;
-            background: #f8f9ff;
+        .conflict-item:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.12);
             transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.15);
         }
         
-        .recommendation-card:hover {
-            border-color: #667eea;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        .conflict-item:last-child {
+            margin-bottom: 0;
         }
         
-        .recommendation-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 15px;
-        }
-        
-        .recommendation-type {
-            background: #ff6b6b;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.8em;
-            font-weight: bold;
-            text-transform: uppercase;
-        }
-        
-        .recommendation-type.remove_outdated {
-            background: #ff6b6b;
-        }
-        
-        .recommendation-type.consolidate {
-            background: #feca57;
-        }
-        
-        .confidence-score {
-            background: #48dbfb;
-            color: white;
-            padding: 8px 16px;
-            border-radius: 20px;
-            font-size: 0.9em;
-            font-weight: bold;
-        }
-        
-        .document-name {
-            font-size: 1.2em;
-            font-weight: bold;
-            color: #333;
-            margin-bottom: 10px;
-            word-break: break-word;
-        }
-        
-        .recommendation-reason {
-            color: #666;
-            margin-bottom: 15px;
-            line-height: 1.5;
-        }
-        
-        .evidence-list {
-            background: #f8f9fa;
-            border-radius: 10px;
-            padding: 15px;
-            margin-bottom: 15px;
-        }
-        
-        .evidence-list h4 {
-            color: #333;
-            margin-bottom: 10px;
-            font-size: 0.9em;
-        }
-        
-        .evidence-list ul {
-            list-style: none;
-            padding-left: 0;
-        }
-        
-        .evidence-list li {
-            padding: 5px 0;
-            color: #666;
-            font-size: 0.9em;
-        }
-        
-        .evidence-list li:before {
-            content: "•";
-            color: #667eea;
-            font-weight: bold;
-            margin-right: 8px;
-        }
-        
-        .conflicts-grid {
-            display: grid;
-            gap: 15px;
-        }
-        
-        .conflict-card {
-            background: #fff;
-            border: 1px solid #e1e5e9;
-            border-radius: 10px;
-            padding: 20px;
-            transition: all 0.3s ease;
-        }
-        
-        .conflict-card:hover {
-            border-color: #667eea;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .conflict-header {
+        .conflict-header-row {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            margin-bottom: 15px;
-            flex-wrap: wrap;
-            gap: 10px;
+            gap: 24px;
+            width: 100%;
         }
         
-        .document-pair {
-            font-weight: bold;
-            color: #333;
-            font-size: 1.1em;
+        .conflict-main {
+            flex: 1;
+            width: 100%;
+        }
+        
+        .conflict-documents {
+            font-size: 16px;
+            color: #262626;
+            font-weight: 600;
+            margin-bottom: 12px;
+            word-break: break-word;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 10px;
+            border: 1px solid #dee2e6;
+            width: 100%;
+        }
+        
+        .conflict-summary {
+            text-align: center;
+            color: #666;
+            font-size: 14px;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        .similarity-highlight {
+            color: #0073e6;
+            font-weight: 600;
+        }
+        
+        .conflicts-highlight {
+            color: #ed7d31;
+            font-weight: 600;
+        }
+        
+        .conflict-main {
+            flex: 1;
+        }
+        
+        .conflict-documents {
+            font-size: 16px;
+            color: #262626;
+            font-weight: 600;
+            margin-bottom: 8px;
+            word-break: break-word;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 12px 16px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 8px;
+            border: 1px solid #dee2e6;
+        }
+        
+        .document-name {
+            padding: 6px 12px;
+            background: #fff;
+            border-radius: 20px;
+            font-size: 13px;
+            font-weight: 500;
+            color: #495057;
+            border: 1px solid #e6e6e6;
+            max-width: calc(50% - 20px);
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+        }
+        
+        .versus-arrow {
+            color: #6c757d;
+            font-weight: 700;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+        
+        .conflict-meta {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+        }
+        
+        .meta-item {
+            font-size: 12px;
+            color: #666;
+            display: flex;
+            align-items: center;
+            gap: 4px;
         }
         
         .conflict-stats {
             display: flex;
-            gap: 15px;
-            font-size: 0.9em;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+            min-width: 120px;
+        }
+        
+        .similarity-bar {
+            width: 100px;
+            height: 4px;
+            background: #f0f0f0;
+            border-radius: 2px;
+            overflow: hidden;
+        }
+        
+        .similarity-fill {
+            height: 100%;
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+        
+        .similarity-high {
+            background: #d73527;
+        }
+        
+        .similarity-medium {
+            background: #ed7d31;
+        }
+        
+        .similarity-low {
+            background: #10ac84;
         }
         
         .conflict-count {
-            background: #ff6b6b;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
+            font-size: 12px;
+            color: #666;
         }
         
-        .similarity-score {
-            background: #48dbfb;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
+        .similarity-percent {
+            font-size: 14px;
+            font-weight: 500;
+            color: #262626;
         }
         
-        .relationship-type {
-            background: #26de81;
-            color: white;
-            padding: 4px 12px;
-            border-radius: 15px;
-            text-transform: capitalize;
-        }
-        
-        .action-buttons {
-            position: sticky;
-            bottom: 20px;
-            background: white;
-            padding: 20px;
-            border-radius: 15px;
-            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+        .expand-arrow {
             display: flex;
-            gap: 15px;
+            flex-direction: column;
+            align-items: center;
             justify-content: center;
-            flex-wrap: wrap;
+            width: 100%;
+            padding: 8px;
+            margin-top: 4px;
+            cursor: pointer;
+            transition: all 0.2s ease;
         }
         
-        .btn {
-            padding: 15px 30px;
-            border: none;
-            border-radius: 10px;
-            cursor: pointer;
-            font-size: 1em;
-            font-weight: bold;
-            transition: all 0.3s ease;
+        .expand-arrow:hover {
+            background: rgba(0, 115, 230, 0.05);
+            border-radius: 6px;
+        }
+        
+        .expand-arrow-label {
+            font-size: 11px;
+            color: #666;
             text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 500;
+            margin-bottom: 2px;
+            transition: color 0.2s ease;
+        }
+        
+        .expand-arrow:hover .expand-arrow-label {
+            color: #0073e6;
+        }
+        
+        .expand-arrow-icon {
+            font-size: 16px;
+            color: #666;
+            transition: all 0.2s ease;
+            font-weight: normal;
+            transform: rotate(-90deg);
+        }
+        
+        .expand-arrow:hover .expand-arrow-icon {
+            color: #0073e6;
+        }
+        
+        .expand-arrow.expanded .expand-arrow-icon {
+            transform: rotate(-270deg);
+        }
+        
+        .expandable-content {
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e6e6e6;
+            overflow: hidden;
+            display: none;
+        }
+        
+        .expandable-content.expanded {
+            display: block;
+        }
+        
+        .conflicts-container {
+            padding: 24px;
+            position: relative;
+        }
+        
+        .navigation-dots {
+            display: flex;
+            justify-content: center;
+            gap: 8px;
+            margin-bottom: 16px;
+        }
+        
+        .nav-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #ccc;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        
+        .nav-dot.active {
+            background: #0073e6;
+        }
+        
+        .nav-dot:hover {
+            background: #0073e6;
+        }
+        
+        .conflicts-scroll {
+            display: flex;
+            gap: 0;
+            overflow-x: auto;
+            padding-bottom: 16px;
+            scroll-snap-type: x mandatory;
+            scroll-behavior: smooth;
+        }
+        
+        .conflicts-scroll::-webkit-scrollbar {
+            height: 8px;
+        }
+        
+        .conflicts-scroll::-webkit-scrollbar-track {
+            background: #f0f0f0;
+            border-radius: 4px;
+        }
+        
+        .conflicts-scroll::-webkit-scrollbar-thumb {
+            background: #ccc;
+            border-radius: 4px;
+        }
+        
+        .conflicts-scroll::-webkit-scrollbar-thumb:hover {
+            background: #999;
+        }
+        
+        .conflict-pair {
+            width: 100%;
+            min-width: 100%;
+            background: #fff;
+            border: 2px solid #e6e6e6;
+            border-radius: 12px;
+            overflow: hidden;
+            flex-shrink: 0;
+            scroll-snap-align: start;
+            margin-right: 20px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+        }
+        
+        .conflict-pair:last-child {
+            margin-right: 0;
+        }
+        
+        .conflict-pair-header {
+            padding: 20px 24px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-bottom: 2px solid #dee2e6;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .conflict-info {
+            font-size: 14px;
+            color: #495057;
+            font-weight: 600;
+        }
+        
+        .similarity-badge {
+            background: linear-gradient(135deg, #0073e6 0%, #005bb5 100%);
+            color: #fff;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            box-shadow: 0 3px 10px rgba(0, 115, 230, 0.3);
+        }
+        
+        .sentences-comparison {
+            display: grid;
+            grid-template-columns: 1fr 2px 1fr;
+            min-height: 250px;
+            gap: 0;
+        }
+        
+        .sentence-panel {
+            padding: 24px;
+            position: relative;
+            transition: all 0.3s ease;
+            background: #fafafa;
+        }
+        
+        .sentence-panel.left {
+            border-top-left-radius: 8px;
+            border-bottom-left-radius: 8px;
+        }
+        
+        .sentence-panel.right {
+            border-top-right-radius: 8px;
+            border-bottom-right-radius: 8px;
+        }
+        
+        .panel-divider {
+            background: linear-gradient(180deg, #e6e6e6 0%, #d0d0d0 50%, #e6e6e6 100%);
+            position: relative;
+        }
+        
+        .panel-divider::before {
+            content: "VS";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: #fff;
+            color: #666;
+            font-size: 10px;
+            font-weight: 600;
+            padding: 4px 6px;
+            border-radius: 12px;
+            border: 1px solid #e6e6e6;
             letter-spacing: 1px;
         }
         
+        .sentence-panel.marked-for-deletion {
+            background: linear-gradient(135deg, #fff5f5 0%, #ffe6e6 100%);
+            border: 2px solid #ffcccc;
+            opacity: 0.8;
+        }
+        
+        .sentence-panel.marked-to-keep {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e6f3ff 100%);
+            border: 2px solid #cce6ff;
+        }
+        
+        .document-label {
+            font-size: 11px;
+            color: #888;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+            font-weight: 600;
+            padding: 6px 12px;
+            background: #fff;
+            border-radius: 12px;
+            display: inline-block;
+            border: 1px solid #e6e6e6;
+        }
+        
+        .sentence-content {
+            font-size: 15px;
+            line-height: 1.6;
+            color: #262626;
+            margin-bottom: 20px;
+            padding: 16px;
+            background: #fff;
+            border-radius: 8px;
+            border: 1px solid #e6e6e6;
+            font-weight: 400;
+            min-height: 80px;
+        }
+        
+        .sentence-actions {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+        }
+        
+        .action-btn {
+            padding: 10px 20px;
+            border: 2px solid #e6e6e6;
+            background: #fff;
+            color: #666;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 11px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.8px;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .action-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+        }
+        
+        .action-btn.delete {
+            background: linear-gradient(135deg, #d73527 0%, #c12e21 100%);
+            color: #fff;
+            border-color: #d73527;
+        }
+        
+        .action-btn.delete:hover {
+            background: linear-gradient(135deg, #c12e21 0%, #a02419 100%);
+            border-color: #c12e21;
+        }
+        
+        .action-btn.keep {
+            background: linear-gradient(135deg, #0073e6 0%, #005bb5 100%);
+            color: #fff;
+            border-color: #0073e6;
+        }
+        
+        .action-btn.keep:hover {
+            background: linear-gradient(135deg, #005bb5 0%, #004494 100%);
+            border-color: #005bb5;
+        }
+        
+        .conflict-counter {
+            position: absolute;
+            top: 16px;
+            right: 16px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: #fff;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 11px;
+            font-weight: 600;
+            box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+        }
+        
+        .document-actions {
+            margin-top: 20px;
+            padding: 16px;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+        
+        .document-actions h4 {
+            margin: 0 0 12px 0;
+            font-size: 14px;
+            color: #262626;
+        }
+        
+        .btn {
+            padding: 8px 16px;
+            border: 1px solid #e6e6e6;
+            background: #fff;
+            color: #262626;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 14px;
+            font-weight: 500;
+            transition: all 0.2s ease;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .btn:hover {
+            border-color: #0073e6;
+            color: #0073e6;
+        }
+        
         .btn-primary {
-            background: #667eea;
-            color: white;
+            background: #0073e6;
+            color: #fff;
+            border-color: #0073e6;
         }
         
         .btn-primary:hover {
-            background: #5a67d8;
-            transform: translateY(-2px);
+            background: #005bb5;
+            border-color: #005bb5;
+            color: #fff;
         }
         
-        .btn-secondary {
-            background: #e1e5e9;
-            color: #333;
-        }
-        
-        .btn-secondary:hover {
-            background: #d1d5d9;
-            transform: translateY(-2px);
-        }
-        
-        .btn-danger {
-            background: #ff6b6b;
-            color: white;
-        }
-        
-        .btn-danger:hover {
-            background: #ff5252;
-            transform: translateY(-2px);
-        }
-        
-        .selection-counter {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #667eea;
-            color: white;
-            padding: 15px 20px;
-            border-radius: 25px;
-            font-weight: bold;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-            z-index: 1000;
-        }
-        
-        .checkbox-container {
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-        
-        .checkbox-container input[type="checkbox"] {
-            width: 20px;
-            height: 20px;
-            accent-color: #667eea;
-        }
-        
-        .loading {
+        .loading-state {
             text-align: center;
-            padding: 50px;
+            padding: 80px 24px;
             color: #666;
+            background: #fff;
+            border: 1px solid #e6e6e6;
+            border-radius: 4px;
         }
         
         .empty-state {
             text-align: center;
-            padding: 50px;
+            padding: 80px 24px;
             color: #666;
         }
         
         .empty-state h3 {
-            margin-bottom: 10px;
-            color: #333;
+            color: #262626;
+            margin-bottom: 8px;
+            font-weight: 400;
         }
         
         @media (max-width: 768px) {
-            .container {
-                margin: 10px;
-                border-radius: 15px;
+            .conflict-pair {
+                min-width: 600px;
             }
             
-            .header {
-                padding: 20px;
+            .sentences-comparison {
+                grid-template-columns: 1fr;
             }
             
-            .header h1 {
-                font-size: 2em;
-            }
-            
-            .stats-grid {
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                padding: 20px;
-                gap: 15px;
-            }
-            
-            .main-content {
-                padding: 20px;
-            }
-            
-            .conflict-header {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .selection-counter {
-                position: static;
-                margin-bottom: 20px;
-                text-align: center;
+            .sentence-panel.left {
+                border-right: none;
+                border-bottom: 1px solid #e6e6e6;
             }
         }
     </style>
 </head>
 <body>
-    <div id="selectionCounter" class="selection-counter" style="display: none;">
-        Selected: <span id="selectionCount">0</span> documents
+    <div class="header">
+        <h1>Document Conflict Analysis</h1>
+        <p>Analyze overlapping content and conflicts between policy documents</p>
     </div>
 
     <div class="container">
-        <div class="header">
-            <h1>📊 Document Conflict Dashboard</h1>
-            <p>Analyze conflicts and manage document duplicates in your repository</p>
-        </div>
-
-        <div id="loadingState" class="loading">
-            <h3>🔄 Loading conflict analysis...</h3>
-            <p>Please wait while we process your document conflicts.</p>
+        <div id="loadingState" class="loading-state">
+            <div style="margin-bottom: 16px;">⏳</div>
+            <h3>Loading Analysis</h3>
+            <p>Processing document conflicts...</p>
         </div>
 
         <div id="dashboardContent" style="display: none;">
-            <div class="stats-grid">
-                <div class="stat-card">
-                    <div class="stat-number" id="totalConflicts">0</div>
-                    <div class="stat-label">Document Pairs</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="totalRecommendations">0</div>
-                    <div class="stat-label">Recommendations</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="highConfidence">0</div>
-                    <div class="stat-label">High Confidence</div>
-                </div>
-                <div class="stat-card">
-                    <div class="stat-number" id="potentialSavings">0</div>
-                    <div class="stat-label">Files to Remove</div>
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-value" id="totalConflicts">0</div>
+                    <div class="metric-label">Conflicting Pairs</div>
                 </div>
             </div>
 
-            <div class="main-content">
-                <div class="section">
-                    <h2><span class="section-icon">🗑️</span> Removal Recommendations</h2>
-                    <div id="recommendationsContainer" class="recommendations-grid">
-                        <!-- Recommendations will be populated here -->
-                    </div>
+            <div class="content-section">
+                <div class="section-header">
+                    <h2 class="section-title">Document Conflicts</h2>
+                    <p class="section-subtitle">Documents with overlapping or conflicting content</p>
                 </div>
-
-                <div class="section">
-                    <h2><span class="section-icon">⚠️</span> Document Conflicts</h2>
-                    <div id="conflictsContainer" class="conflicts-grid">
-                        <!-- Conflicts will be populated here -->
-                    </div>
+                <div class="section-content" id="conflictsContainer">
+                    <!-- Conflicts will be populated here -->
                 </div>
-            </div>
-
-            <div class="action-buttons">
-                <button class="btn btn-secondary" onclick="selectAll()">Select All</button>
-                <button class="btn btn-secondary" onclick="clearSelection()">Clear Selection</button>
-                <button class="btn btn-primary" onclick="exportSelection()">Export Selection</button>
-                <button class="btn btn-danger" onclick="confirmDeletion()">Delete Selected</button>
             </div>
         </div>
     </div>
 
     <script>
         let conflictData = null;
-        let selectedDocuments = new Set();
+        let markedSentences = new Map();
 
-        // Load conflict data
         async function loadConflictData() {
             try {
                 const response = await fetch('analysis/document_conflicts.json');
-                if (!response.ok) throw new Error('Failed to load conflict data');
+                if (!response.ok) {
+                    throw new Error(`HTTP ${response.status}: ${response.statusText}`);
+                }
                 
                 conflictData = await response.json();
                 renderDashboard();
             } catch (error) {
                 console.error('Error loading conflict data:', error);
                 document.getElementById('loadingState').innerHTML = `
-                    <h3>❌ Error loading data</h3>
-                    <p>Please ensure the conflict analysis has been run and the file exists at: analysis/document_conflicts.json</p>
-                    <button class="btn btn-primary" onclick="location.reload()">Retry</button>
+                    <div style="margin-bottom: 16px;">❌</div>
+                    <h3>Error Loading Data</h3>
+                    <p>Could not load analysis/document_conflicts.json</p>
+                    <p style="color: #d73527; font-size: 12px;">${error.message}</p>
+                    <button class="btn btn-primary" onclick="location.reload()" style="margin-top: 16px;">Retry</button>
                 `;
             }
         }
@@ -484,224 +717,241 @@
         function renderDashboard() {
             if (!conflictData) return;
 
-            // Update statistics
             document.getElementById('totalConflicts').textContent = conflictData.summary.total_document_pairs_with_conflicts;
-            document.getElementById('totalRecommendations').textContent = conflictData.summary.total_removal_recommendations;
-            document.getElementById('highConfidence').textContent = conflictData.summary.high_confidence_recommendations;
-            
-            // Calculate potential file savings
-            const uniqueFiles = new Set();
-            conflictData.removal_recommendations.forEach(rec => {
-                rec.document.split(', ').forEach(doc => uniqueFiles.add(doc.trim()));
-            });
-            document.getElementById('potentialSavings').textContent = uniqueFiles.size;
-
-            // Render recommendations
-            renderRecommendations();
-
-            // Render conflicts
             renderConflicts();
-
-            // Show dashboard
             document.getElementById('loadingState').style.display = 'none';
             document.getElementById('dashboardContent').style.display = 'block';
         }
 
-        function renderRecommendations() {
-            const container = document.getElementById('recommendationsContainer');
-            
-            if (!conflictData.removal_recommendations.length) {
-                container.innerHTML = `
-                    <div class="empty-state">
-                        <h3>✅ No removal recommendations</h3>
-                        <p>Great! No documents need to be removed.</p>
-                    </div>
-                `;
-                return;
-            }
-
-            container.innerHTML = conflictData.removal_recommendations.map((rec, index) => `
-                <div class="recommendation-card" data-doc="${rec.document}" onclick="toggleRecommendation('${rec.document}')">
-                    <div class="checkbox-container">
-                        <input type="checkbox" id="rec_${index}" onchange="toggleRecommendation('${rec.document}', this.checked)">
-                    </div>
-                    <div class="recommendation-header">
-                        <div class="recommendation-type ${rec.recommendation_type}">${rec.recommendation_type.replace('_', ' ')}</div>
-                        <div class="confidence-score">${Math.round(rec.confidence_score * 100)}%</div>
-                    </div>
-                    <div class="document-name">${rec.document}</div>
-                    <div class="recommendation-reason">${rec.reason}</div>
-                    <div class="evidence-list">
-                        <h4>Evidence:</h4>
-                        <ul>
-                            ${rec.evidence.map(evidence => `<li>${evidence}</li>`).join('')}
-                        </ul>
-                    </div>
-                    ${rec.conflicting_documents.length ? `
-                        <div style="margin-top: 10px; font-size: 0.9em; color: #666;">
-                            <strong>Conflicts with:</strong> ${rec.conflicting_documents.join(', ')}
-                        </div>
-                    ` : ''}
-                </div>
-            `).join('');
-        }
-
         function renderConflicts() {
             const container = document.getElementById('conflictsContainer');
-            
-            if (!conflictData.document_conflicts.length) {
+            const conflicts = conflictData.document_conflicts;
+
+            if (!conflicts.length) {
                 container.innerHTML = `
                     <div class="empty-state">
-                        <h3>✅ No document conflicts found</h3>
-                        <p>All documents are unique with no significant overlaps.</p>
+                        <h3>No conflicts found</h3>
+                        <p>No overlapping content detected between documents.</p>
                     </div>
                 `;
                 return;
             }
 
-            container.innerHTML = conflictData.document_conflicts.map(conflict => `
-                <div class="conflict-card">
-                    <div class="conflict-header">
-                        <div class="document-pair">${conflict.doc1} ↔ ${conflict.doc2}</div>
-                        <div class="conflict-stats">
-                            <span class="conflict-count">${conflict.conflict_count} conflicts</span>
-                            <span class="similarity-score">${Math.round(conflict.avg_similarity * 100)}% similar</span>
-                            <span class="relationship-type">${conflict.relationship_type.replace('_', ' ')}</span>
+            container.innerHTML = conflicts.map((conflict, index) => {
+                const similarity = Math.round(conflict.avg_similarity * 100);
+                const similarityClass = similarity >= 95 ? 'similarity-high' : 
+                                      similarity >= 85 ? 'similarity-medium' : 'similarity-low';
+
+                return `
+                    <div class="conflict-item">
+                        <div class="conflict-header-row">
+                            <div class="conflict-main">
+                                <div class="conflict-documents">
+                                    <span class="document-name">${conflict.doc1}</span>
+                                    <span class="versus-arrow">↔</span>
+                                    <span class="document-name">${conflict.doc2}</span>
+                                </div>
+                                <div class="conflict-summary">
+                                    Found an average similarity score of <span class="similarity-highlight">${similarity}%</span> with <span class="conflicts-highlight">${conflict.conflict_count} conflicts</span>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-                    ${conflict.top_conflicts && conflict.top_conflicts.length ? `
-                        <details style="margin-top: 15px;">
-                            <summary style="cursor: pointer; font-weight: bold; color: #667eea;">View Sample Conflicts</summary>
-                            <div style="margin-top: 10px; padding: 10px; background: #f8f9fa; border-radius: 5px;">
-                                ${conflict.top_conflicts.map(sample => `
-                                    <div style="margin-bottom: 15px; padding-bottom: 15px; border-bottom: 1px solid #e1e5e9;">
-                                        <div style="font-size: 0.8em; color: #666; margin-bottom: 5px;">
-                                            Similarity: ${Math.round(sample.similarity_score * 100)}%
-                                        </div>
-                                        <div style="margin-bottom: 5px;">
-                                            <strong>1:</strong> "${sample.sentence1_text.substring(0, 100)}..."
-                                        </div>
+                        ${conflict.top_conflicts && conflict.top_conflicts.length ? `
+                            <div class="expand-arrow" onclick="toggleConflicts(${index})">
+                                <span class="expand-arrow-label">Review</span>
+                                <span class="expand-arrow-icon" id="arrow-${index}">‹</span>
+                            </div>
+                            <div class="expandable-content" id="conflicts-${index}">
+                                <div class="conflicts-container">
+                                    <div class="navigation-dots" id="dots-${index}">
+                                        ${conflict.top_conflicts.map((_, dotIndex) => `
+                                            <div class="nav-dot ${dotIndex === 0 ? 'active' : ''}" onclick="scrollToConflict(${index}, ${dotIndex})"></div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="conflicts-scroll" id="scroll-${index}" onscroll="updateNavDots(${index})">
+                                        ${conflict.top_conflicts.map((sample, sampleIndex) => `
+                                            <div class="conflict-pair" data-conflict-index="${sampleIndex}">
+                                                <div class="conflict-pair-header">
+                                                    <div class="conflict-info">Conflict ${sampleIndex + 1} of ${conflict.top_conflicts.length}</div>
+                                                    <div class="similarity-badge">${Math.round(sample.similarity_score * 100)}% similar</div>
+                                                </div>
+                                                <div class="sentences-comparison">
+                                                    <div class="sentence-panel left" data-sentence-id="${sample.sentence1_id}">
+                                                        <div class="conflict-counter">${sampleIndex + 1}</div>
+                                                        <div class="document-label">${conflict.doc1}</div>
+                                                        <div class="sentence-content">"${sample.sentence1_text}"</div>
+                                                        <div class="sentence-actions">
+                                                            <button class="action-btn delete" onclick="markForDeletion('${sample.sentence1_id}', '${conflict.doc1}')">Mark for Deletion</button>
+                                                            <button class="action-btn keep" onclick="markToKeep('${sample.sentence1_id}', '${conflict.doc1}')">Keep This Version</button>
+                                                        </div>
+                                                    </div>
+                                                    <div class="panel-divider"></div>
+                                                    <div class="sentence-panel right" data-sentence-id="${sample.sentence2_id}">
+                                                        <div class="document-label">${conflict.doc2}</div>
+                                                        <div class="sentence-content">"${sample.sentence2_text}"</div>
+                                                        <div class="sentence-actions">
+                                                            <button class="action-btn delete" onclick="markForDeletion('${sample.sentence2_id}', '${conflict.doc2}')">Mark for Deletion</button>
+                                                            <button class="action-btn keep" onclick="markToKeep('${sample.sentence2_id}', '${conflict.doc2}')">Keep This Version</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        `).join('')}
+                                    </div>
+                                    <div class="document-actions">
+                                        <h4>Document Actions</h4>
                                         <div>
-                                            <strong>2:</strong> "${sample.sentence2_text.substring(0, 100)}..."
+                                            <button class="btn btn-primary" onclick="downloadCleanupReport('${conflict.doc1}')">Download ${conflict.doc1} Cleanup</button>
+                                            <button class="btn btn-primary" onclick="downloadCleanupReport('${conflict.doc2}')">Download ${conflict.doc2} Cleanup</button>
                                         </div>
                                     </div>
-                                `).join('')}
+                                </div>
                             </div>
-                        </details>
-                    ` : ''}
-                </div>
-            `).join('');
+                        ` : ''}
+                    </div>
+                `;
+            }).join('');
         }
 
-        function toggleRecommendation(document, forceValue = null) {
-            const isSelected = forceValue !== null ? forceValue : selectedDocuments.has(document);
+        function toggleConflicts(index) {
+            const conflicts = document.getElementById(`conflicts-${index}`);
+            const arrow = document.getElementById(`arrow-${index}`);
+            const expandArrow = arrow.parentElement;
             
-            if (isSelected && !selectedDocuments.has(document)) {
-                selectedDocuments.add(document);
-            } else if (!isSelected && selectedDocuments.has(document)) {
-                selectedDocuments.delete(document);
-            } else if (forceValue === null) {
-                // Toggle
-                if (selectedDocuments.has(document)) {
-                    selectedDocuments.delete(document);
-                } else {
-                    selectedDocuments.add(document);
-                }
-            }
-
-            updateUI();
-        }
-
-        function updateUI() {
-            // Update selection counter
-            const counter = document.getElementById('selectionCounter');
-            const count = document.getElementById('selectionCount');
-            
-            if (selectedDocuments.size > 0) {
-                counter.style.display = 'block';
-                count.textContent = selectedDocuments.size;
+            if (conflicts.classList.contains('expanded')) {
+                conflicts.classList.remove('expanded');
+                expandArrow.classList.remove('expanded');
             } else {
-                counter.style.display = 'none';
+                conflicts.classList.add('expanded');
+                expandArrow.classList.add('expanded');
             }
+        }
 
-            // Update card appearances
-            document.querySelectorAll('.recommendation-card').forEach(card => {
-                const doc = card.getAttribute('data-doc');
-                const checkbox = card.querySelector('input[type="checkbox"]');
+        function markForDeletion(sentenceId, documentName) {
+            markedSentences.set(sentenceId, { action: 'delete', document: documentName });
+            
+            const panel = document.querySelector(`[data-sentence-id="${sentenceId}"]`);
+            if (panel) {
+                panel.classList.remove('marked-to-keep');
+                panel.classList.add('marked-for-deletion');
                 
-                if (selectedDocuments.has(doc)) {
-                    card.classList.add('selected');
-                    if (checkbox) checkbox.checked = true;
+                const deleteBtn = panel.querySelector('.action-btn.delete');
+                const keepBtn = panel.querySelector('.action-btn.keep');
+                
+                if (deleteBtn) {
+                    deleteBtn.textContent = 'Marked for Deletion';
+                    deleteBtn.style.opacity = '0.7';
+                }
+                if (keepBtn) {
+                    keepBtn.textContent = 'Keep This Version';
+                    keepBtn.style.opacity = '1';
+                }
+            }
+        }
+
+        function markToKeep(sentenceId, documentName) {
+            markedSentences.set(sentenceId, { action: 'keep', document: documentName });
+            
+            const panel = document.querySelector(`[data-sentence-id="${sentenceId}"]`);
+            if (panel) {
+                panel.classList.remove('marked-for-deletion');
+                panel.classList.add('marked-to-keep');
+                
+                const deleteBtn = panel.querySelector('.action-btn.delete');
+                const keepBtn = panel.querySelector('.action-btn.keep');
+                
+                if (deleteBtn) {
+                    deleteBtn.textContent = 'Mark for Deletion';
+                    deleteBtn.style.opacity = '1';
+                }
+                if (keepBtn) {
+                    keepBtn.textContent = 'Keeping This Version';
+                    keepBtn.style.opacity = '0.7';
+                }
+            }
+        }
+
+        function scrollToConflict(containerIndex, conflictIndex) {
+            const scrollContainer = document.getElementById(`scroll-${containerIndex}`);
+            const conflictWidth = scrollContainer.scrollWidth / scrollContainer.children.length;
+            scrollContainer.scrollTo({
+                left: conflictIndex * conflictWidth,
+                behavior: 'smooth'
+            });
+            updateNavDots(containerIndex);
+        }
+
+        function updateNavDots(containerIndex) {
+            const scrollContainer = document.getElementById(`scroll-${containerIndex}`);
+            const dotsContainer = document.getElementById(`dots-${containerIndex}`);
+            
+            if (!scrollContainer || !dotsContainer) return;
+            
+            const conflictWidth = scrollContainer.scrollWidth / scrollContainer.children.length;
+            const currentIndex = Math.round(scrollContainer.scrollLeft / conflictWidth);
+            
+            const dots = dotsContainer.querySelectorAll('.nav-dot');
+            dots.forEach((dot, index) => {
+                if (index === currentIndex) {
+                    dot.classList.add('active');
                 } else {
-                    card.classList.remove('selected');
-                    if (checkbox) checkbox.checked = false;
+                    dot.classList.remove('active');
                 }
             });
         }
 
-        function selectAll() {
-            if (!conflictData) return;
+        function downloadCleanupReport(documentName) {
+            const deletionMarks = Array.from(markedSentences.entries())
+                .filter(([sentenceId, data]) => 
+                    data.document === documentName && data.action === 'delete'
+                )
+                .map(([sentenceId, data]) => ({
+                    sentence_id: sentenceId,
+                    document: documentName,
+                    action: 'delete'
+                }));
             
-            conflictData.removal_recommendations.forEach(rec => {
-                selectedDocuments.add(rec.document);
-            });
+            const keepMarks = Array.from(markedSentences.entries())
+                .filter(([sentenceId, data]) => 
+                    data.document === documentName && data.action === 'keep'
+                )
+                .map(([sentenceId, data]) => ({
+                    sentence_id: sentenceId,
+                    document: documentName,
+                    action: 'keep'
+                }));
             
-            updateUI();
-        }
-
-        function clearSelection() {
-            selectedDocuments.clear();
-            updateUI();
-        }
-
-        function exportSelection() {
-            if (selectedDocuments.size === 0) {
-                alert('Please select at least one document to export.');
+            if (deletionMarks.length === 0 && keepMarks.length === 0) {
+                alert('No sentences marked for this document.');
                 return;
             }
-
-            const exportData = {
-                export_date: new Date().toISOString(),
-                selected_documents: Array.from(selectedDocuments),
-                total_selected: selectedDocuments.size,
-                recommendations: conflictData.removal_recommendations.filter(rec => 
-                    selectedDocuments.has(rec.document)
-                )
+            
+            const cleanupReport = {
+                document: documentName,
+                processed_date: new Date().toISOString(),
+                summary: {
+                    total_marked_for_deletion: deletionMarks.length,
+                    total_marked_to_keep: keepMarks.length
+                },
+                sentences_to_delete: deletionMarks,
+                sentences_to_keep: keepMarks,
+                instructions: "Use this report to clean up the document by removing sentences marked for deletion."
             };
-
-            const blob = new Blob([JSON.stringify(exportData, null, 2)], {
+            
+            const blob = new Blob([JSON.stringify(cleanupReport, null, 2)], {
                 type: 'application/json'
             });
             
             const url = URL.createObjectURL(blob);
             const a = document.createElement('a');
             a.href = url;
-            a.download = `document_removal_selection_${new Date().toISOString().split('T')[0]}.json`;
+            a.download = `${documentName.replace('.md', '')}_cleanup_report_${new Date().toISOString().split('T')[0]}.json`;
             document.body.appendChild(a);
             a.click();
             document.body.removeChild(a);
             URL.revokeObjectURL(url);
         }
 
-        function confirmDeletion() {
-            if (selectedDocuments.size === 0) {
-                alert('Please select at least one document to delete.');
-                return;
-            }
-
-            const documentList = Array.from(selectedDocuments).join('\n• ');
-            const confirmed = confirm(`Are you sure you want to delete the following ${selectedDocuments.size} document(s)?\n\n• ${documentList}\n\nThis action cannot be undone.`);
-
-            if (confirmed) {
-                // In a real implementation, this would call an API
-                alert(`Selected ${selectedDocuments.size} documents for deletion. In a real implementation, this would remove the files from your storage account.`);
-                
-                // For demo purposes, clear the selection
-                clearSelection();
-            }
-        }
-
-        // Initialize dashboard
         window.addEventListener('load', loadConflictData);
     </script>
 </body>
